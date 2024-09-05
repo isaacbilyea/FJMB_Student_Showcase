@@ -24,10 +24,10 @@ Open index.html in the browser of your choice.
 
 ## Credits
 
-Bryle Flores
-Apapat Juntarattanakamol
-Bernardo Macapagal
-Isaac Bilyea
+Bryle Flores  
+Apapat Juntarattanakamol  
+Bernardo Macapagal  
+Isaac Bilyea  
 
 ## License
 
