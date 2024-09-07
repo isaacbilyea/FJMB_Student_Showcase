@@ -21,6 +21,8 @@ Open index.html in the browser of your choice.
 ## History
 
 - September 5 2024
+- September 6 2024
+- September 7 2024
 
 ## Credits
 
