@@ -19,3 +19,56 @@ body .box:not(header .box):not(footer .box) {
     align-items: center;
     justify-content: center;
 }
+
+#student-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+#student-grid div {
+    display: flex;
+    padding: 20px;
+    margin: 10px;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(3, 53, 0);
+    border-radius: 12px;
+}
+
+#student-grid div p {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: white;
+}
+
+#student-grid div a {
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+}
+
+@media screen and (min-width: 768px) {
+
+    #student-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+
+    #student-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+@media screen and (min-width: 1920px) {
+
+    #student-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+}
