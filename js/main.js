@@ -101,3 +101,35 @@ const devPortfolioLinks = devNames.map(names => {
   
     return `${firstInitial}.${lastName}.com`;
 });
+
+//This function creates the HTML elements and appends them appropriately 
+function studentGrid(name,link){
+
+    //This div is a container for each student, including their name and link
+    let studentCon = document.createElement('div');
+
+    let nameText = document.createElement('p');
+    let portLink = document.createElement('a');
+
+    nameText.textContent = name;
+
+    //The link is displayed as text and the text is linked to the portfolio
+    portLink.textContent = link;
+    portLink.href = link;
+
+    //This puts the name and link inside the div created above
+    studentCon.appendChild(nameText);
+    studentCon.appendChild(portLink);
+
+    //This appends that div to the div already exisiting inside the HTML to keep the grid in one container
+    document.getElementById('student-grid').appendChild(studentCon);
+}
+
+//This goes through each item in the studentNames and portfolioLinks array and calls the above studentGrid function
+for(let i = 0; i < studentNames.length; i++){
+
+    let name = studentNames[i];
+    let link = portfolioLinks[i];
+    studentGrid(name,link);
+
+}
