@@ -20,6 +20,16 @@ body .box:not(header .box):not(footer .box) {
     justify-content: center;
 }
 
+#event-video {
+    display: flex;
+    justify-content: center;
+}
+
+#event-video video{
+    width: 75vw;
+    margin: 0 auto;
+}
+
 #student-grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
