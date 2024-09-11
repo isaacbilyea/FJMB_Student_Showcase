@@ -1,3 +1,5 @@
+//VARIABLES
+
 //Students
 const studentNames = [
 "Diego Rodriguez-Ramos", 
@@ -102,6 +104,17 @@ const devPortfolioLinks = devNames.map(names => {
     return `${firstInitial}.${lastName}.com`;
 });
 
+const testimonialCards = {
+
+    name: ["David Patterson", "Julia Emsworth", "Reishi Cordyceps"],
+    job: ["Project Manager", "Accounts Executive", "Project Manager"],
+    text: ["lorem ipsum", "lorem ipsum", "lorem ipsum"],
+    image: ["images/profile-placeholder.png", "images/profile-placeholder.png", "images/profile-placeholder.png"]
+
+};
+
+//FUNCTIONS
+
 //This function creates the HTML elements and appends them appropriately 
 function studentGrid(name,link){
 
@@ -126,7 +139,7 @@ function studentGrid(name,link){
 
     //This appends that div to the div already exisiting inside the HTML to keep the grid in one container
     document.getElementById('student-grid').appendChild(studentCon);
-}
+};
 
 //This goes through each item in the studentNames and portfolioLinks array and calls the above studentGrid function
 for(let i = 0; i < studentNames.length; i++){
@@ -135,4 +148,6 @@ for(let i = 0; i < studentNames.length; i++){
     let link = portfolioLinks[i];
     studentGrid(name,link);
 
-}
+};
+
+//EVENT LISTENERS
