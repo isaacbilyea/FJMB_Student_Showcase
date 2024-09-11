@@ -117,6 +117,9 @@ function studentGrid(name,link){
     portLink.textContent = link;
     portLink.href = link;
 
+    //This makes it so when the link is clicked its open in a new window
+    portLink.target = "_blank";
+
     //This puts the name and link inside the div created above
     studentCon.appendChild(nameText);
     studentCon.appendChild(portLink);

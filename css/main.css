@@ -2,6 +2,11 @@
     display: none;
 }
 
+body {
+    font-family: Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
 .box {
     background-color: rgb(3, 53, 0);
     color: white;
@@ -10,7 +15,6 @@
     text-align: center;
     margin-top: 10px;
     margin-bottom:10px;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 body .box:not(header .box):not(footer .box) {
@@ -18,6 +22,40 @@ body .box:not(header .box):not(footer .box) {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#banner {
+    background-color: #373737;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#left-banner, #right-banner {
+    display: flex;
+    align-items: center;
+}
+
+#right-banner img{
+    padding: 0px 10px;
+    height: 15px;
+}
+
+#right-banner p {
+    padding-right: 50px;
+}
+
+#logo, #nav {
+    margin-top: 50px;
 }
 
 #event-video {

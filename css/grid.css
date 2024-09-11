@@ -2,7 +2,7 @@
   
 .full-width-grid-con {
     display: grid; 
-    grid-template-columns: 1fr minmax(0, 1200px) 1fr;  
+    grid-template-columns: 1fr minmax(0, 1fr);  
 }
  
 .grid-con { 
