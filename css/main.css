@@ -1,9 +1,52 @@
+/* 
+    CSS Guide 
+
+    1.  GENERAL STYLES
+
+    2.  HEADER
+
+    3.  HOME PAGE
+    3a. Hero Banner
+    3b. Intro Video
+    3c. Event Info
+    3d. Featured Work
+    3e. Testimonials
+    3f. Program Info
+    3g. Student Portfolios
+    3h. Bottom Banner
+
+    4.  FOOTER
+*/
+
+/* 1. GENERAL STYLES */
+
 .hidden {
     display: none;
 }
 
+img, embed, object, video, picture {
+    max-width: 100%; 
+}
+  
+html, body {
+    height: 100%;
+    min-height: 100vh;
+    margin: 0;
+    box-sizing: border-box; 
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+  
+/* body, p, h1, h2, h3, h4, h5 {
+    margin: 0px; 
+    padding: 0px;
+} */
+
 body {
     font-family: Helvetica, sans-serif;
+    font-size: 16px;
     box-sizing: border-box;
 }
 
@@ -24,8 +67,10 @@ body .box:not(header .box):not(footer .box) {
     justify-content: center;
 }
 
+/* 2. HEADER */
+
 #banner {
-    background-color: #373737;
+    background-color: #E2231A;
     color: white;
     font-size: 12px;
     font-weight: 600;
@@ -47,7 +92,7 @@ body .box:not(header .box):not(footer .box) {
 
 #right-banner img{
     padding: 0px 10px;
-    height: 15px;
+    height: 10px;
 }
 
 #right-banner p {
@@ -58,6 +103,10 @@ body .box:not(header .box):not(footer .box) {
     margin-top: 50px;
 }
 
+/* 3. HOME PAGE */
+
+/* 3b. Intro Video */
+
 #event-video {
     display: flex;
     justify-content: center;
@@ -67,6 +116,8 @@ body .box:not(header .box):not(footer .box) {
     width: 75vw;
     margin: 0 auto;
 }
+
+/* 3g. Student Portfolios */
 
 #student-grid {
     display: grid;
@@ -96,6 +147,8 @@ body .box:not(header .box):not(footer .box) {
     color: white;
     text-decoration: none;
 }
+
+/* MEDIA QUERIES */
 
 @media screen and (min-width: 768px) {
 
