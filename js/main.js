@@ -106,10 +106,10 @@ const devPortfolioLinks = devNames.map(names => {
 
 const testimonialCards = {
 
+    image: ["images/profile-placeholder.png", "images/profile-placeholder.png", "images/profile-placeholder.png"],
     name: ["David Patterson", "Julia Emsworth", "Reishi Cordyceps"],
     job: ["Project Manager", "Accounts Executive", "Project Manager"],
-    text: ["lorem ipsum", "lorem ipsum", "lorem ipsum"],
-    image: ["images/profile-placeholder.png", "images/profile-placeholder.png", "images/profile-placeholder.png"]
+    text: ["lorem ipsum", "lorem ipsum", "lorem ipsum"]
 
 };
 
@@ -147,6 +147,39 @@ for(let i = 0; i < studentNames.length; i++){
     let name = studentNames[i];
     let link = portfolioLinks[i];
     studentGrid(name,link);
+
+};
+
+//This loops through the testimonialCards object 
+for(let i = 0; i < testimonialCards.name.length; i++){
+
+    //Creates a div for each testimonial card
+    let testimonialCon = document.createElement('div');
+
+    //Creates elements for each card
+    let image = document.createElement('img');
+    let name = document.createElement('p');
+    let job = document.createElement('p');
+    let text = document.createElement('p');
+
+    //Applies elements to their respective array
+    image.src = testimonialCards.image[i];
+    name.textContent = testimonialCards.name[i];
+    job.textContent = testimonialCards.job[i];
+    text.textContent = testimonialCards.text[i];
+
+    //Adds classes to each element to allow for CSS styling
+    testimonialCon.classList.add('testimonial-card')
+    name.classList.add('testimonial-name');
+    job.classList.add('testimonial-job');
+    text.classList.add('testimonial-text');
+    image.classList.add('testimonial-image');
+
+    //Puts all the created elements into the div created in this loop (each card)
+    testimonialCon.append(image, name, job, text);
+
+    //Appends the card to the already existing div inside the html acting as a wrapper
+    document.getElementById('testimonial-container').appendChild(testimonialCon);
 
 };
 

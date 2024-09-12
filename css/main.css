@@ -5,17 +5,22 @@
 
     2.  HEADER
 
-    3.  HOME PAGE
-    3a. Hero Banner
-    3b. Intro Video
-    3c. Event Info
-    3d. Featured Work
-    3e. Testimonials
-    3f. Program Info
-    3g. Student Portfolios
-    3h. Bottom Banner
+    3.  SECTION 1 - Event
+        3a. Hero Banner
+        3b. Intro Video
+        3c. Event Info
 
-    4.  FOOTER
+    4.  SECTION 2 - Course
+        4a. Project Exhibit
+        4b. Testimonials
+        4c. Course Info
+    
+    5.  SECTION 3 - Student
+        5a. Featured Work
+        5b. Developer Portfolios?
+        5c. Student Portfolios
+
+    6.  FOOTER
 */
 
 /* 1. GENERAL STYLES */
@@ -103,7 +108,7 @@ body .box:not(header .box):not(footer .box) {
     margin-top: 50px;
 }
 
-/* 3. HOME PAGE */
+/* 3. SECTION 1 - Event */
 
 /* 3b. Intro Video */
 
@@ -117,7 +122,49 @@ body .box:not(header .box):not(footer .box) {
     margin: 0 auto;
 }
 
-/* 3g. Student Portfolios */
+/* 4. SECTION 2 - Course */
+
+/* 4b. Testimonials */
+
+#testimonial-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.testimonial-card {
+    width: 40vw;
+    color: white;
+    background-color: #B3272d;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 30px 0px 20px 40px;
+}
+
+.testimonial-image {
+    width: 5vw;
+    margin-left: -5px;
+}
+
+.testimonial-name {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 0px;
+}
+
+.testimonial-job {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.testimonial-text {
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+/* 5. SECTION 3 - Student */
+
+/* 5c. Student Portfolios */
 
 #student-grid {
     display: grid;
