@@ -25,6 +25,76 @@
 
 /* 1. GENERAL STYLES */
 
+/* Thin (100) */
+@font-face {
+    font-family: 'Metropolis';
+    src: url('../fonts/Metropolis-Thin.otf') format('opentype'),
+         url('../fonts/Metropolis-Thin.woff') format('woff'),
+         url('../fonts/Metropolis-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+}
+
+/* Regular (400) */
+@font-face {
+    font-family: 'Metropolis';
+    src: url('../fonts/Metropolis-Regular.otf') format('opentype'),
+         url('../fonts/Metropolis-Regular.woff') format('woff'),
+         url('../fonts/Metropolis-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Medium (500) */
+@font-face {
+    font-family: 'Metropolis';
+    src: url('../fonts/Metropolis-Medium.otf') format('opentype'),
+         url('../fonts/Metropolis-Medium.woff') format('woff'),
+         url('../fonts/Metropolis-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* SemiBold (600) */
+@font-face {
+    font-family: 'Metropolis';
+    src: url('../fonts/Metropolis-SemiBold.otf') format('opentype'),
+         url('../fonts/Metropolis-SemiBold.woff') format('woff'),
+         url('../fonts/Metropolis-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* Bold (700) */
+@font-face {
+    font-family: 'Metropolis';
+    src: url('../fonts/Metropolis-Bold.otf') format('opentype'),
+         url('../fonts/Metropolis-Bold.woff') format('woff'),
+         url('../fonts/Metropolis-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Extra Bold (800) */
+@font-face {
+    font-family: 'Metropolis';
+    src: url('../fonts/Metropolis-ExtraBold.otf') format('opentype'),
+         url('../fonts/Metropolis-ExtraBold.woff') format('woff'),
+         url('../fonts/Metropolis-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+
+/* Black (900) */
+@font-face {
+    font-family: 'Metropolis';
+    src: url('../fonts/Metropolis-Black.otf') format('opentype'),
+         url('../fonts/Metropolis-Black.woff') format('woff'),
+         url('../fonts/Metropolis-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+}
+
 .hidden {
     display: none;
 }
@@ -50,7 +120,7 @@ html, body {
 } */
 
 body {
-    font-family: Helvetica, sans-serif;
+    font-family: 'Metropolis', sans-serif;
     font-size: 16px;
     box-sizing: border-box;
 }
@@ -75,40 +145,96 @@ body .box:not(header .box):not(footer .box) {
 /* 2. HEADER */
 
 #banner {
-    background-color: #E2231A;
+    background-color: #B5262D;
     color: white;
-    font-size: 12px;
-    font-weight: 600;
+    font-size: 10px;
+    font-weight: 700;
     display: flex;
     justify-content: space-between;
+    padding: 0px 25px;
     align-items: center;
-    padding: 0px 50px;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
+    height: 50px;
     box-sizing: border-box;
 }
 
-#left-banner, #right-banner {
+#banner-contact {
+    background-color: white;
+    color: #B5262D;
+    border: none;
+    font-size: 10px;
+    font-weight: 800;
+    border-radius: 35px;
+    padding: 4px 13px;
+}
+
+#right-banner img, #right-banner p {
+    display: none;
+}
+
+
+/* 3. SECTION 1 - Event */
+
+/* 3a. Hero Banner */
+
+#hero-banner {
+    background-image: url("../images/grey-background.png");
+    background-size: cover;
+    background-position: 25% 75%;
+}
+
+#hero-con {
+    position: relative;
     display: flex;
+    justify-content: center;
     align-items: center;
-}
-
-#right-banner img{
-    padding: 0px 10px;
-    height: 10px;
-}
-
-#right-banner p {
-    padding-right: 50px;
-}
-
-#logo, #nav {
     margin-top: 50px;
 }
 
-/* 3. SECTION 1 - Event */
+#hero-con img {
+    width: 280px;
+    opacity: 0.7;
+}
+
+#hero-title {
+    position: absolute;
+    top: 41%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#hero-title h3 {
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: black;
+    font-size: 20px;
+    text-align: center;
+}
+
+#hero-title span:first-of-type {
+    margin-top: 5px;
+    display: block;
+}
+
+#hero-title span {
+    color: #B5262D;
+    font-size: 35px;
+}
+
+#hero-text {
+    text-align: center;
+    color: black;
+    font-size: 25px;
+    font-weight: 700;
+    margin-top: -125px;
+}
+
+#hero-text span {
+    color: #B5262D;
+}
 
 /* 3b. Intro Video */
 
@@ -118,8 +244,9 @@ body .box:not(header .box):not(footer .box) {
 }
 
 #event-video video{
-    width: 75vw;
+    width: 90vw;
     margin: 0 auto;
+    margin-top: 10px;
 }
 
 /* 4. SECTION 2 - Course */
@@ -135,7 +262,7 @@ body .box:not(header .box):not(footer .box) {
 .testimonial-card {
     width: 40vw;
     color: white;
-    background-color: #B3272d;
+    background-color: #B5262D;
     margin: 20px;
     border-radius: 10px;
     padding: 30px 0px 20px 40px;
@@ -203,6 +330,15 @@ body .box:not(header .box):not(footer .box) {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    #right-banner img{
+        padding: 0px 10px;
+        height: 15px;
+    }
+    
+    #right-banner p {
+        padding-right: 50px;
+    }
+    
 }
 
 @media screen and (min-width: 1200px) {
