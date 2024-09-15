@@ -243,10 +243,40 @@ body .box:not(header .box):not(footer .box) {
     justify-content: center;
 }
 
-#event-video video{
+#event-video video {
     width: 90vw;
     margin: 0 auto;
     margin-top: 10px;
+}
+
+#scroll-con {
+    background-color: #160305;
+    overflow: hidden;
+    color: white;
+    font-weight: 500;
+    font-size: 10px;
+    margin-top: 20px;
+    white-space: nowrap;
+    padding: 20px;
+}
+
+#scroll-text {
+    display: inline-block;
+    animation: scrollingText 30s linear infinite;
+}
+
+#scroll-text span {
+    display: inline-block;
+    padding-right: 20px;
+}
+
+@keyframes scrollingText {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 /* 4. SECTION 2 - Course */
