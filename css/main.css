@@ -17,7 +17,7 @@
     
     5.  SECTION 3 - Student
         5a. Featured Work
-        5b. Developer Portfolios?
+        5b. Developer Portfolios
         5c. Student Portfolios
 
     6.  FOOTER
@@ -159,6 +159,7 @@ body .box:not(header .box):not(footer .box) {
     width: 100vw;
     height: 50px;
     box-sizing: border-box;
+    z-index: 10;
 }
 
 #banner-contact {
@@ -175,7 +176,6 @@ body .box:not(header .box):not(footer .box) {
     display: none;
 }
 
-
 /* 3. SECTION 1 - Event */
 
 /* 3a. Hero Banner */
@@ -183,7 +183,6 @@ body .box:not(header .box):not(footer .box) {
 #hero-banner {
     background-image: url("../images/grey-background.png");
     background-size: cover;
-    background-position: 25% 75%;
 }
 
 #hero-con {
@@ -238,12 +237,12 @@ body .box:not(header .box):not(footer .box) {
 
 /* 3b. Intro Video */
 
-#event-video {
+#event-video-con {
     display: flex;
     justify-content: center;
 }
 
-#event-video video {
+#event-video-con video {
     width: 90vw;
     margin: 0 auto;
     margin-top: 10px;
@@ -279,6 +278,56 @@ body .box:not(header .box):not(footer .box) {
     }
 }
 
+/* 3c. Event Info */
+
+.section-headings {
+    font-size: 35px;
+    font-weight: 800;
+    color: black;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.section-headings span {
+    color: #BA3026;
+}
+
+.section-subheadings {
+    font-size: 10px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 5px;
+}
+
+#event-stats-con {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.event-stats {
+    display: flex;
+    align-items: center;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.stats-number {
+    color: #BA3026;
+    font-size: 50px;
+    font-weight: 900;
+    width: 100px;
+    text-align: center;
+    margin-right: 50px;
+}
+
+.stats-text {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
 /* 4. SECTION 2 - Course */
 
 /* 4b. Testimonials */
@@ -290,9 +339,8 @@ body .box:not(header .box):not(footer .box) {
 }
 
 .testimonial-card {
-    width: 40vw;
     color: white;
-    background-color: #B5262D;
+    background: linear-gradient(to bottom, #535353, #9A9A9A);
     margin: 20px;
     border-radius: 10px;
     padding: 30px 0px 20px 40px;
@@ -317,6 +365,36 @@ body .box:not(header .box):not(footer .box) {
 .testimonial-text {
     margin-top: 20px;
     font-size: 12px;
+}
+
+/* 4c. Course Info */
+
+#course-info-con {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#course-info-con img {
+    width: 85vw;
+    margin: 25px 0;
+}
+
+#course-info-con p {
+    font-size: 13px;
+    width: 80vw;
+    margin: 7px;
+}
+
+#course-button {
+    margin: 40px 0px;
+    border: #B5262D 1px solid;
+    border-radius: 35px;
+    background-color: white;
+    padding: 15px 50px;
+    font-size: 15px;
+    font-weight: 700;
 }
 
 /* 5. SECTION 3 - Student */
