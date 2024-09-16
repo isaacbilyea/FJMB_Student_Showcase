@@ -42,7 +42,7 @@ const studentNames = [
 "Akamjot Singh", 
 "Emmanuel Opadele", 
 "Shon Sojan", 
-"Ishan Mehra Ishan Mehra", 
+"Ishan Mehra", 
 "Shiyon Biju Varghese", 
 "Jashan Kumar",
 "Meetinder Singh Dhaliwal", 
@@ -90,10 +90,10 @@ const portfolioLinks = studentNames.map(names => {
 
 //Developers
 const devNames = [
-    "Apapat Juntarattanakamol", 
-    "Bernardo Jr. Macapagal", 
-    "Bryle Timothy Flores",
-    "Isaac Bilyea"
+    "Bryle Flores", 
+    "Music Jun.", 
+    "Isaac Bilyea",
+    "Bernardo Mac."
 ];
 
 //See portfolioLinks for descriptions
@@ -121,21 +121,17 @@ function studentGrid(name,link){
     //This div is a container for each student, including their name and link
     let studentCon = document.createElement('div');
 
-    let nameText = document.createElement('p');
-    let portLink = document.createElement('a');
-
-    nameText.textContent = name;
+    let studentLink = document.createElement('a');
 
     //The link is displayed as text and the text is linked to the portfolio
-    portLink.textContent = link;
-    portLink.href = link;
+    studentLink.textContent = name;
+    studentLink.href = link;
 
-    //This makes it so when the link is clicked its open in a new window
-    portLink.target = "_blank";
+    //This makes it so when the name is clicked its open in a new window
+    studentLink.target = "_blank";
 
     //This puts the name and link inside the div created above
-    studentCon.appendChild(nameText);
-    studentCon.appendChild(portLink);
+    studentCon.appendChild(studentLink);
 
     //This appends that div to the div already exisiting inside the HTML to keep the grid in one container
     document.getElementById('student-grid').appendChild(studentCon);
@@ -147,6 +143,44 @@ for(let i = 0; i < studentNames.length; i++){
     let name = studentNames[i];
     let link = portfolioLinks[i];
     studentGrid(name,link);
+
+};
+
+//This function creates the HTML elements and appends them appropriately 
+function devGrid(name,link){
+
+    //This div is a container for each student, including their name and link
+    let devCon = document.createElement('div');
+
+    let devName = document.createElement('p');
+    let devLink = document.createElement('button');
+
+    devName.textContent = name;
+
+    //The link is displayed as text and the text is linked to the portfolio
+    devLink.textContent = 'LINK';
+    devLink.href = link;
+
+    //This makes it so when the link is clicked its open in a new window
+    devLink.target = "_blank";
+
+    devLink.addEventListener('click', function() {
+        window.open(link);
+    });
+
+    //This puts the name and link inside the div created above
+    devCon.appendChild(devName);
+    devCon.appendChild(devLink);
+
+    //This appends that div to the div already exisiting inside the HTML to keep the grid in one container
+    document.getElementById('developer-grid').appendChild(devCon);
+};
+
+for(let i = 0; i < devNames.length; i++){
+
+    let name = devNames[i];
+    let link = devPortfolioLinks[i];
+    devGrid(name,link);
 
 };
 
