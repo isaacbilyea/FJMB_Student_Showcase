@@ -106,10 +106,10 @@ const devPortfolioLinks = devNames.map(names => {
 
 const testimonialCards = {
 
-    image: ["images/profile-placeholder.png", "images/profile-placeholder.png", "images/profile-placeholder.png"],
-    name: ["David Patterson", "Julia Emsworth", "Reishi Cordyceps"],
-    job: ["Project Manager", "Accounts Executive", "Project Manager"],
-    text: ["lorem ipsum", "lorem ipsum", "lorem ipsum"]
+    image: ["images/profile-placeholder.png"],// "images/profile-placeholder.png", "images/profile-placeholder.png"],
+    name: ["David Patterson"],// "Julia Emsworth", "Reishi Cordyceps"],
+    job: ["Project Manager"],// "Accounts Executive", "Project Manager"],
+    text: ["Etiam nec nisi risus. Donec eu augue blandit, aliquam dolor eu, bibendum ex. Praesent ac malesuada diam. Quisque tempus vestibulum laoreet. Cras pretium lacus ut diam volutpat, non mollis justo aliquet. Nam vehicula erat congue est venenatis imperdiet."],// "lorem ipsum", "lorem ipsum"]
 
 };
 
