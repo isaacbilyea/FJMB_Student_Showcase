@@ -337,7 +337,6 @@ body .box:not(header .box):not(footer .box) {
     font-size: 11px;
 }
 
-
 .section-headings {
     font-size: 35px;
     font-weight: 800;
@@ -355,6 +354,69 @@ body .box:not(header .box):not(footer .box) {
     font-weight: 500;
     text-align: center;
     margin-top: 5px;
+}
+
+.event-card {
+    position: relative;
+    color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 80vw;
+    margin-top: 20px;
+    height: 525px;
+    max-width: 335px;
+    box-shadow: 0 0 10px rgba(186, 48, 38, 0.6), 0 0 20px rgba(186, 48, 38, 0.6), 0 0 30px rgba(186, 48, 38, 0.6);
+}
+
+.event-card-con {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 40px;
+    background-color: black;
+    padding: 20px;
+}
+
+.event-heading-con {
+    display: flex;
+    align-items: center;
+}
+
+.event-number {
+    color: #BA3026;
+    font-size: 70px;
+    font-weight: 800;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.event-heading {
+    font-size: 26px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.event-text {
+    font-size: 18px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.event-time {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #BA3026;
+    padding: 15px;
+    font-size: 26px;
+    font-weight: 900;
+    text-align: center;
+}
+
+#event-overview-heading {
+    margin-top: 50px;
 }
 
 #event-stats-con {
@@ -455,31 +517,34 @@ body .box:not(header .box):not(footer .box) {
 #testimonial-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .testimonial-card {
     color: white;
-    background: linear-gradient(to bottom, #535353, #9A9A9A);
+    background: linear-gradient(to bottom, #535353, #616161 60%, #9A9A9A);
     margin: 20px;
-    border-radius: 10px;
-    padding: 30px 0px 20px 40px;
+    border-radius: 20px;
+    padding: 32px;
+    width: 305px;
+    height: 372px;
 }
 
 .testimonial-image {
-    width: 5vw;
+    width: 102px;
     margin-left: -5px;
+    margin-top: 5px;
 }
 
 .testimonial-name {
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 800;
     margin-bottom: 0px;
 }
 
 .testimonial-job {
-    font-size: 14px;
-    margin-top: 5px;
+    font-size: 15px;
+    margin-top: 0px;
 }
 
 .testimonial-text {
