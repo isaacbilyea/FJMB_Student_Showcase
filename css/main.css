@@ -147,26 +147,27 @@ body .box:not(header .box):not(footer .box) {
 #banner {
     background-color: #B5262D;
     color: white;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 700;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0px 25px;
     align-items: center;
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     width: 100vw;
     height: 50px;
     box-sizing: border-box;
     z-index: 10;
+    gap: 20px;
 }
 
 #banner-contact {
     background-color: white;
     color: #B5262D;
     border: none;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 800;
     border-radius: 35px;
     padding: 4px 13px;
@@ -193,9 +194,9 @@ body .box:not(header .box):not(footer .box) {
     margin-top: 50px;
 }
 
-#hero-con img {
-    width: 280px;
-    opacity: 0.7;
+#hero-logo {
+    width: 100vw;
+    opacity: 0.5;
 }
 
 #hero-title {
@@ -235,6 +236,11 @@ body .box:not(header .box):not(footer .box) {
     color: #B5262D;
 }
 
+#hero-text button {
+    margin-top: 0;
+    padding: 15px 65px;
+}
+
 /* 3b. Intro Video */
 
 #event-video-con {
@@ -245,7 +251,7 @@ body .box:not(header .box):not(footer .box) {
 #event-video-con video {
     width: 90vw;
     margin: 0 auto;
-    margin-top: 10px;
+    margin-top: 50px;
 }
 
 #scroll-con {
@@ -254,7 +260,7 @@ body .box:not(header .box):not(footer .box) {
     color: white;
     font-weight: 500;
     font-size: 10px;
-    margin-top: 20px;
+    margin-top: 30px;
     white-space: nowrap;
     padding: 20px;
 }
@@ -279,6 +285,56 @@ body .box:not(header .box):not(footer .box) {
 }
 
 /* 3c. Event Info */
+
+#event-info {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#trophy-logo {
+    width: 85vw;
+}
+
+#event-info-heading {
+    line-height: 1;
+    margin-top: 50px;
+}
+
+#event-info-heading p {
+    color: #BC2519;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+#event-info-text p {
+    width: 75vw;
+    font-size: 13px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#event-info-text p:last-child {
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 11px;
+    width: 60vw;
+}
+
+#event-map {
+    margin: 60px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#event-map p {
+    font-size: 11px;
+}
+
 
 .section-headings {
     font-size: 35px;
@@ -331,6 +387,10 @@ body .box:not(header .box):not(footer .box) {
 /* 4. SECTION 2 - Course */
 
 /* 4a. Project Exhibit */
+
+#project-exhibit {
+    margin-top: 100px;
+}
 
 #project-heading h4 {
     text-align: center;
