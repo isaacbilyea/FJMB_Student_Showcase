@@ -564,6 +564,7 @@ body .box:not(header .box):not(footer .box) {
 #course-info-con img {
     width: 85vw;
     margin: 25px 0;
+    border-radius: 25px;
 }
 
 #course-info-con p {
@@ -584,10 +585,74 @@ body .box:not(header .box):not(footer .box) {
 
 /* 5. SECTION 3 - Student */
 
+/* 5a. Featured Work */
+
+.featured-work-card {
+    position: relative;
+    width: 311px;
+    height: 478px;
+    border-radius: 25px;
+    overflow: hidden;
+    margin: 30px auto;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.featured-work-image {
+    position: absolute;
+    top: 0;
+}
+
+.featured-work-content {
+    position: absolute;
+    top: 45%;
+    bottom: 0;
+    background: white;
+    padding: 25px;
+    text-align: center;
+    margin-top: -10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.featured-work-heading {
+    font-size: 25px;
+    font-weight: 800;
+    text-align: left;
+    margin: 0;
+}
+
+.featured-work-subheading {
+    font-size: 13px;
+    font-weight: 700;
+    color: #BC2519;
+    margin: 0;
+    text-align: left;
+}
+
+.featured-work-text {
+    font-size: 13px;
+    text-align: left;
+}
+
+.featured-work-button {
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #BA3026;
+    border: none;
+    border-radius: 35px;
+    padding: 12px 35px;
+    align-self: center;
+    margin-top: auto; 
+    margin-bottom: 10px;
+}
+
 /* 5b. Student Portfolios */
 
 #portfolio-background {
     background: radial-gradient(circle, #A7A7A7 0%, #6E6E6E 25%, #444444 100%);
+    margin-top: 50px;
 }
 
 .portfolio-headings {
