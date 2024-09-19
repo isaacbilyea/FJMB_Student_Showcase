@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
     <link href="css/grid.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link rel="icon" href="images/favicon-16x16.png" sizes="16x16" type="image/png">
     <link rel="icon" href="images/favicon-32x32.png" sizes="32x32" type="image/png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fanshawe Industry Night</title>
 </head>
 
@@ -61,7 +62,6 @@
 
         <div id="hero-text" class="col-span-full">
             <p>Together, let's celebrate<br><span>creativity, innovation,</span><br>and <span>collaboration.</span></p>
-            <button class="main-buttons">REGISTER</button>
         </div>
 
     </section>
@@ -70,17 +70,18 @@
     <section id="event-video" class="full-width-grid-con">
         <h2 class="hidden">Intro Video</h2>
 
-        <div id="event-video-con" class="col-span-full">
-            <video controls poster="images/Bernardo.jpg">
-                <source src="videos/test.mp4" type="video/mp4">
-            </video>
-        </div>
-
         <div id="scroll-con" class="col-span-full">
             <div id="scroll-text">
                 <span>DISCOVER WHAT MAKES INDUSTRY NIGHT SPECIAL THROUGH OUR INTRODUCTORY VIDEO. GET A SNEAK PEEK OF THE EVENT AND SEE HOW OUR INTERACTIVE MEDIA PROGRAM STANDS OUT.</span>
                 <span>DISCOVER WHAT MAKES INDUSTRY NIGHT SPECIAL THROUGH OUR INTRODUCTORY VIDEO. GET A SNEAK PEEK OF THE EVENT AND SEE HOW OUR INTERACTIVE MEDIA PROGRAM STANDS OUT.</span>
             </div>
+        </div>
+
+        <div id="event-video-con" class="col-span-full">
+            <video class="player" preload="metadata" poster="images/Bernardo.jpg">
+                <source src="videos/test.mp4" type="video/mp4">
+                <p>Oops, something went wrong. You may be using an outdated browser or have javascript disabled.</p>
+            </video>
         </div>
 
     </section>
@@ -360,7 +361,8 @@
         </div>
 
     </footer>
-
+    
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
