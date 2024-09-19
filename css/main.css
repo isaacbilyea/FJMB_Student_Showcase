@@ -115,11 +115,6 @@ html, body {
 *, *::before, *::after {
     box-sizing: inherit;
 }
-  
-/* body, p, h1, h2, h3, h4, h5 {
-    margin: 0px; 
-    padding: 0px;
-} */
 
 body, button {
     font-family: 'Metropolis', sans-serif;
@@ -245,17 +240,6 @@ body .box:not(header .box):not(footer .box) {
 
 /* 3b. Intro Video */
 
-#event-video-con {
-    display: flex;
-    justify-content: center;
-}
-
-#event-video-con video {
-    width: 90vw;
-    margin: 0 auto;
-    margin-top: 50px;
-}
-
 #scroll-con {
     background-color: #160305;
     overflow: hidden;
@@ -284,6 +268,22 @@ body .box:not(header .box):not(footer .box) {
     100% {
         transform: translateX(-50%);
     }
+}
+
+#event-video-con {
+    display: flex;
+    justify-content: center;
+}
+
+.plyr--video {
+    width: 90vw;
+    margin: 0 auto;
+    margin-top: 50px;
+    --plyr-color-main: #BC2519;
+    --plyr-control-icon-size: 15px;
+    --plyr-control-radius: 20px;
+    --plyr-font-family: Metropolis, sans-serif;
+    --plyr-control-spacing: 15px;
 }
 
 /* 3c. Event Info */

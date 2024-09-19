@@ -1,5 +1,7 @@
 //VARIABLES
 
+const player = new Plyr('video');
+
 //Students
 const studentNames = [
 "Diego Rodriguez-Ramos", 
