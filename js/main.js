@@ -219,4 +219,10 @@ for(let i = 0; i < testimonialCards.name.length; i++){
 
 };
 
-//EVENT LISTENERS
+function toggleMenu() {
+    document.getElementById('hamburger-menu').classList.toggle('activate');
+    document.getElementById('menu-items').classList.toggle('show');
+}
+
+// EVENT LISTENERS
+document.getElementById('hamburger-menu').addEventListener('click', toggleMenu);
