@@ -2,6 +2,10 @@
 
 const player = new Plyr('video');
 
+let currentIndex = 0;
+
+const menuItems = document.querySelectorAll('.menu-item');
+
 //Students
 const studentNames = [
 "Diego Rodriguez-Ramos", 
@@ -93,7 +97,7 @@ const portfolioLinks = studentNames.map(names => {
 //Developers
 const devNames = [
     "Bryle Flores", 
-    "Music Jun.", 
+    "Music Juntarattanakamol", 
     "Isaac Bilyea",
     "Bernardo Mac."
 ];
@@ -108,14 +112,27 @@ const devPortfolioLinks = devNames.map(names => {
 
 const testimonialCards = {
 
-    image: ["images/profile-placeholder.png"],// "images/profile-placeholder.png", "images/profile-placeholder.png"],
-    name: ["David Patterson"],// "Julia Emsworth", "Reishi Cordyceps"],
-    job: ["Project Manager"],// "Accounts Executive", "Project Manager"],
-    text: ["Etiam nec nisi risus. Donec eu augue blandit, aliquam dolor eu, bibendum ex. Praesent ac malesuada diam. Quisque tempus vestibulum laoreet. Cras pretium lacus ut diam volutpat, non mollis justo aliquet. Nam vehicula erat congue est venenatis imperdiet."],// "lorem ipsum", "lorem ipsum"]
+    image: ["images/profile-placeholder.png", "images/profile-placeholder.png", "images/profile-placeholder.png"],
+    name: ["David Patterson", "Julia Emsworth", "Reishi Cordyceps"],
+    job: ["Project Manager", "Accounts Executive", "Project Manager"],
+    text: ["Etiam nec nisi risus. Donec eu augue blandit, aliquam dolor eu, bibendum ex. Praesent ac malesuada diam. Quisque tempus vestibulum laoreet. Cras pretium lacus ut diam volutpat, non mollis justo aliquet. Nam vehicula erat congue est venenatis imperdiet.","lorem ipsum", "lorem ipsum"]
 
 };
 
 //FUNCTIONS
+
+//This function formats the name to be first name and last initial
+function formatName(fullName) {
+
+    //This splits the name into an array where each word is an element
+    let splitName = fullName.split(' ');
+
+    let firstName = splitName[0];
+    let lastName = splitName[splitName.length - 1];
+    let lastInitial = lastName[0];
+    return `${firstName} ${lastInitial}.`;
+
+}
 
 //This function creates the HTML elements and appends them appropriately 
 function studentGrid(name,link){
@@ -126,7 +143,7 @@ function studentGrid(name,link){
     let studentLink = document.createElement('a');
 
     //The link is displayed as text and the text is linked to the portfolio
-    studentLink.textContent = name;
+    studentLink.textContent = formatName(name);
     studentLink.href = link;
 
     //This makes it so when the name is clicked its open in a new window
@@ -139,15 +156,6 @@ function studentGrid(name,link){
     document.getElementById('student-grid').appendChild(studentCon);
 };
 
-//This goes through each item in the studentNames and portfolioLinks array and calls the above studentGrid function
-for(let i = 0; i < studentNames.length; i++){
-
-    let name = studentNames[i];
-    let link = portfolioLinks[i];
-    studentGrid(name,link);
-
-};
-
 //This function creates the HTML elements and appends them appropriately 
 function devGrid(name,link){
 
@@ -157,7 +165,7 @@ function devGrid(name,link){
     let devName = document.createElement('p');
     let devLink = document.createElement('button');
 
-    devName.textContent = name;
+    devName.textContent = formatName(name);
 
     //The link is displayed as text and the text is linked to the portfolio
     devLink.textContent = 'LINK';
@@ -176,6 +184,33 @@ function devGrid(name,link){
 
     //This appends that div to the div already exisiting inside the HTML to keep the grid in one container
     document.getElementById('developer-grid').appendChild(devCon);
+};
+
+function toggleMenu() {
+    document.getElementById('hamburger-menu').classList.toggle('activate');
+    document.getElementById('menu-items').classList.toggle('show');
+};
+
+function showTestimonial(index) {
+    const testimonials = document.querySelectorAll('.testimonial-card');
+
+    // Hide the currently displayed testimonial
+    testimonials[currentIndex].style.display = 'none';
+
+    // Update currentIndex and wrap around if needed
+    currentIndex = (index + testimonials.length) % testimonials.length;
+
+    // Show the new testimonial
+    testimonials[currentIndex].style.display = 'block';
+};
+
+//This goes through each item in the studentNames and portfolioLinks array and calls the above studentGrid function
+for(let i = 0; i < studentNames.length; i++){
+
+    let name = studentNames[i];
+    let link = portfolioLinks[i];
+    studentGrid(name, link);
+
 };
 
 for(let i = 0; i < devNames.length; i++){
@@ -205,24 +240,41 @@ for(let i = 0; i < testimonialCards.name.length; i++){
     text.textContent = testimonialCards.text[i];
 
     //Adds classes to each element to allow for CSS styling
-    testimonialCon.classList.add('testimonial-card')
+    testimonialCon.classList.add('testimonial-card');
     name.classList.add('testimonial-name');
     job.classList.add('testimonial-job');
     text.classList.add('testimonial-text');
     image.classList.add('testimonial-image');
 
+    if (i !== currentIndex) {
+        testimonialCon.style.display = 'none';
+    }
+
     //Puts all the created elements into the div created in this loop (each card)
     testimonialCon.append(image, name, job, text);
+
+    testimonialCon.setAttribute('data-index', i);
 
     //Appends the card to the already existing div inside the html acting as a wrapper
     document.getElementById('testimonial-container').appendChild(testimonialCon);
 
 };
 
-function toggleMenu() {
-    document.getElementById('hamburger-menu').classList.toggle('activate');
-    document.getElementById('menu-items').classList.toggle('show');
-}
+for (items of menuItems) {
+
+    const links = items.querySelector('a');
+    links.addEventListener('click', toggleMenu);
+
+};
 
 // EVENT LISTENERS
+
 document.getElementById('hamburger-menu').addEventListener('click', toggleMenu);
+
+document.getElementById('next-btn').addEventListener('click', function() {
+    showTestimonial(currentIndex + 1);
+});
+
+document.getElementById('prev-btn').addEventListener('click', function() {
+    showTestimonial(currentIndex - 1);
+});
