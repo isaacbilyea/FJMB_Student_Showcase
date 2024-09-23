@@ -2,8 +2,6 @@
 
 const player = new Plyr('video');
 
-let currentIndex = 0;
-
 const menuItems = document.querySelectorAll('.menu-item');
 
 //Students
@@ -99,7 +97,7 @@ const devNames = [
     "Bryle Flores", 
     "Music Juntarattanakamol", 
     "Isaac Bilyea",
-    "Bernardo Mac."
+    "Bernardo Jr. Macapagal"
 ];
 
 //See portfolioLinks for descriptions
@@ -191,19 +189,6 @@ function toggleMenu() {
     document.getElementById('menu-items').classList.toggle('show');
 };
 
-function showTestimonial(index) {
-    const testimonials = document.querySelectorAll('.testimonial-card');
-
-    // Hide the currently displayed testimonial
-    testimonials[currentIndex].style.display = 'none';
-
-    // Update currentIndex and wrap around if needed
-    currentIndex = (index + testimonials.length) % testimonials.length;
-
-    // Show the new testimonial
-    testimonials[currentIndex].style.display = 'block';
-};
-
 //This goes through each item in the studentNames and portfolioLinks array and calls the above studentGrid function
 for(let i = 0; i < studentNames.length; i++){
 
@@ -223,6 +208,8 @@ for(let i = 0; i < devNames.length; i++){
 
 //This loops through the testimonialCards object 
 for(let i = 0; i < testimonialCards.name.length; i++){
+
+    let currentIndex = 0;
 
     //Creates a div for each testimonial card
     let testimonialCon = document.createElement('div');
@@ -260,6 +247,7 @@ for(let i = 0; i < testimonialCards.name.length; i++){
 
 };
 
+//This adds an event listener to all the menu items so the menu is toggled off when a menu item is clicked
 for (items of menuItems) {
 
     const links = items.querySelector('a');
@@ -267,14 +255,46 @@ for (items of menuItems) {
 
 };
 
+//This function is for scrolling through multiple cards using arrows
+//I made it reusable by taking in 4 elements and then calling the functions for their respective containers, cards and arrows
+function scrollCards(cardContainer, cardClass, prevBtn, nextBtn) {
+    //This puts all the cards in a variable, container is needed first as finalists and honour have the same card class
+    const cards = document.querySelectorAll(`${cardContainer} ${cardClass}`);
+    let currentIndex = 0;
+
+    //This goes through the cards and hides all the ones that aren't at the current index
+    function showCard(index) {
+        for (let i = 0; i < cards.length; i++) {
+            if (i === index) {
+                cards[i].style.display = 'block';
+            } else {
+                cards[i].style.display = 'none'; 
+            }
+        }
+    }
+
+    //This shows the first card
+    showCard(currentIndex);
+
+    //Adds event listeners to buttons
+    document.querySelector(prevBtn).addEventListener('click', function() {
+        currentIndex = (currentIndex - 1 + cards.length) % cards.length;//% cards.length makes it wrap around -> eg. 3%3=0 (first card)
+        showCard(currentIndex);
+    });
+
+    document.querySelector(nextBtn).addEventListener('click', function() {
+        currentIndex = (currentIndex + 1) % cards.length;
+        showCard(currentIndex);
+    });
+}
+
+//These call the function created above with their respective id's and classes
+scrollCards('#event-card-wrapper', '.event-card', '#event-prev-btn', '#event-next-btn');
+scrollCards('#finalists-wrapper', '.project-card', '#finalists-prev-btn', '#finalists-next-btn');
+scrollCards('#honour-wrapper', '.project-card', '#honour-prev-btn', '#honour-next-btn');
+scrollCards('#testimonial-container', '.testimonial-card', '#testimonial-prev-btn', '#testimonial-next-btn');
+
 // EVENT LISTENERS
 
 document.getElementById('hamburger-menu').addEventListener('click', toggleMenu);
 
-document.getElementById('next-btn').addEventListener('click', function() {
-    showTestimonial(currentIndex + 1);
-});
-
-document.getElementById('prev-btn').addEventListener('click', function() {
-    showTestimonial(currentIndex - 1);
-});

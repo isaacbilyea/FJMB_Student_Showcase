@@ -483,10 +483,26 @@ a {
     color: white;
     border-radius: 15px;
     overflow: hidden;
-    width: 80vw;
-    height: 525px;
-    max-width: 335px;
+    width: 70vw;
+    height: 475px;
+    min-width: 300px;
+    max-width: 70vw;
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+#event-card-wrapper {
+    position: relative;
+}
+
+#event-next-btn {
+    right: -40px;
+    top: 40%;
+}
+
+#event-prev-btn {
+    left: -40px;
+    top: 40%;
 }
 
 .event-card-con {
@@ -506,20 +522,20 @@ a {
 
 .event-number {
     color: #BA3026;
-    font-size: 70px;
+    font-size: 60px;
     font-weight: 800;
     margin-left: 10px;
     margin-right: 20px;
 }
 
 .event-heading {
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 800;
     margin: 0;
 }
 
 .event-text {
-    font-size: 18px;
+    font-size: 16px;
     margin-top: 20px;
     text-align: center;
 }
@@ -531,7 +547,7 @@ a {
     right: 0;
     background-color: #BA3026;
     padding: 15px;
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 900;
     text-align: center;
 }
@@ -565,7 +581,6 @@ a {
     font-weight: 600;
 }
 
-
 /* 4. SECTION 2 - Course */
 
 /* 4a. Project Exhibit */
@@ -573,13 +588,15 @@ a {
 .project-card {
     border-radius: 25px;
     position: relative;
-    width: 311px;
+    min-width: 300px;
+    max-width: 70vw;
     height: 478px;
     border-radius: 25px;
     overflow: hidden;
     margin: 30px auto;
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);
     background-color: black;
+    display: none;
 }
 
 .project-placement {
@@ -602,6 +619,34 @@ a {
     padding: 25px;
     text-align: center;
     bottom: 0;
+}
+
+#finalists-wrapper {
+    position: relative;
+}
+
+#finalists-next-btn {
+    right: 10px;
+    top: 50%;
+}
+
+#finalists-prev-btn {
+    left: 10px;
+    top: 50%;
+}
+
+#honour-wrapper {
+    position: relative;
+}
+
+#honour-next-btn {
+    right: 10px;
+    top: 50%;
+}
+
+#honour-prev-btn {
+    left: 10px;
+    top: 50%;
 }
 
 #scroll-images {
@@ -701,7 +746,8 @@ a {
     margin: 20px;
     border-radius: 20px;
     padding: 32px;
-    width: 305px;
+    min-width: 300px;
+    max-width: 70vw;
     height: 372px;
 }
 
@@ -727,20 +773,22 @@ a {
     font-size: 12px;
 }
 
+#testimonial-next-btn {
+    right: 10px;
+    top: 40%;
+}
+
+#testimonial-prev-btn {
+    left: 10px;
+    top: 40%;
+}
+
 .arrow {
-    position: absolute;
     color: black;
     top: 45%;
     font-size: 40px;
     cursor: pointer;
-}
-
-.left-arrow {
-    left: 10px;
-}
-
-.right-arrow {
-    right: 10px;
+    position: absolute;
 }
 
 .arrow:hover {
