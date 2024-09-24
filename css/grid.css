@@ -8,10 +8,10 @@
 .grid-con { 
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    grid-column-gap: 8px;
+    grid-column-gap: 12px;
     margin: 0 auto;
-    padding-left: 8px;
-    padding-right: 8px;
+    padding-left: 38px;
+    padding-right: 38px;
 }
  
 .col-span-1	{grid-column: span 1 / span 1;}
@@ -38,9 +38,9 @@
     .grid-con { 
        display: grid; 
        grid-template-columns: repeat(12, minmax(0, 1fr));
-       grid-column-gap: 20px;
-       padding-left: 16px;
-       padding-right: 16px;
+       grid-column-gap: 11px;
+       padding-left: 35px;
+       padding-right: 35px;
     }
  
     .m-col-span-1	{grid-column: span 1 / span 1;}
@@ -93,9 +93,9 @@
     .grid-con { 
        display: grid; 
        grid-template-columns: repeat(12, minmax(0, 1fr));
-       grid-column-gap: 16px;
-       padding-left: 16px;
-       padding-right: 16px;
+       grid-column-gap: 14px;
+       padding-left: 37px;
+       padding-right: 37px;
     }
  
     .l-col-span-1	{grid-column: span 1 / span 1;}
@@ -141,3 +141,4 @@
     .l-col-end-13	{grid-column-end: 13;}
  
 }
+

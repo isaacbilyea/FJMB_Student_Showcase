@@ -2,7 +2,7 @@
 
 const player = new Plyr('video');
 
-const menuItems = document.querySelectorAll('.menu-item');
+const menuItems = document.querySelectorAll('.mobile-menu-item');
 
 //Students
 const studentNames = [
@@ -186,7 +186,7 @@ function devGrid(name,link){
 
 function toggleMenu() {
     document.getElementById('hamburger-menu').classList.toggle('activate');
-    document.getElementById('menu-items').classList.toggle('show');
+    document.getElementById('mobile-menu').classList.toggle('show');
 };
 
 //This goes through each item in the studentNames and portfolioLinks array and calls the above studentGrid function
