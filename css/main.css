@@ -413,25 +413,17 @@ a {
 }
 
 #event-info-heading {
-    line-height: 1;
-    margin-top: 50px;
-}
-
-#event-info-heading p {
-    color: #BC2519;
-    font-size: 15px;
-    font-weight: 600;
+    margin-top: 0;
 }
 
 #event-info-text p {
-    width: 75vw;
     font-size: 13px;
     margin: 0 auto;
     text-align: center;
     margin-top: 30px;
 }
 
-#event-info-text p:last-child {
+#address {
     margin-top: 20px;
     font-weight: 700;
     font-size: 11px;
@@ -445,9 +437,11 @@ a {
     align-items: center;
 }
 
-#event-map p {
+#event-map span {
     font-size: 11px;
     text-align: center;
+    display: block;
+    margin-top: 10px;
 }
 
 .section-headings {
@@ -548,13 +542,13 @@ a {
     flex-direction: column;
     margin: 0 auto;
     margin-top: 60px;
+    margin-bottom: -40px;
 }
 
 .event-stats {
     display: flex;
     align-items: center;
     color: #1D1D1D;
-    margin-bottom: 10px;
     margin-top: 30px;
 }
 
@@ -974,6 +968,7 @@ a {
     border: none;
     width: 50%;
     height: 50px;
+    cursor: pointer;
 }
 
 /* 6. THANK YOU */
@@ -1435,6 +1430,65 @@ footer {
         flex-direction: row;
         gap: 30px;
     }
+
+    #event-info-con {
+        justify-content: left;
+        align-items: left;
+        margin: 50px 0 80px 0;
+    }
+
+    #trophy-logo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        margin-top: 0;
+        padding-right: 30px;
+    }
+    
+    #event-info-heading h3 {
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        font-size: 40px;
+    }
+    
+    #event-info-text p {
+        font-size: 14px;
+        text-align: left;
+        margin: 0;
+        margin-top: 10px;
+    }
+    
+    #event-info-text {
+        position: relative;
+    }
+
+    #address {
+        width: 70%;
+        font-size: 13px;
+        margin: 0;
+        margin-top: 15px;
+    }
+    
+    #event-map {
+        margin: 0px;
+    }
+    
+    #event-map span {
+        display: none;
+    }
+    
+    #event-info-right {
+        margin-right: 30px;
+    }
+
+    #map-marker {
+        height: 27px;
+        position: absolute;
+        bottom: 2%;
+        right: 5%;
+    }
+        
 }
 
 @media screen and (min-width: 1200px) {

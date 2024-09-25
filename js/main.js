@@ -111,9 +111,9 @@ const devPortfolioLinks = devNames.map(names => {
 const testimonialCards = {
 
     image: ["images/profile-placeholder.png", "images/profile-placeholder.png", "images/profile-placeholder.png"],
-    name: ["David Patterson", "Julia Emsworth", "Reishi Cordyceps"],
-    job: ["Project Manager", "Accounts Executive", "Project Manager"],
-    text: ["Etiam nec nisi risus. Donec eu augue blandit, aliquam dolor eu, bibendum ex. Praesent ac malesuada diam. Quisque tempus vestibulum laoreet. Cras pretium lacus ut diam volutpat, non mollis justo aliquet. Nam vehicula erat congue est venenatis imperdiet.","lorem ipsum", "lorem ipsum"]
+    name: ["David Patterson", "Samantha Taylor", "Christopher Martin"],
+    job: ["Marketing Lead, Cineplex Studious", "Northern Commerce, Head of Development", "Tech Alliance, Brand Supervisor"],
+    text: ["It’s been a great experience working with these talented students to bring our vision to life. From planning to final development, their skills in multimedia truly impressed us. We’re excited to see all of them succeed!","Seeing the outputs produced by every student was very impressive, mastering their skills in web development, brand designs, and innovative artistry. I am confident that this opens multiple doors of opportunities for them.", "Getting to watch the teams present their final client project is amazing to witness with their professionalism and strengths in navigating through their content. Kudos to all students and their professors. Great work!"]
 
 };
 
