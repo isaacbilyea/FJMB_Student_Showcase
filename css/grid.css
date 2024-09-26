@@ -12,6 +12,7 @@
     margin: 0 auto;
     padding-left: 38px;
     padding-right: 38px;
+    max-width: 1200px;
 }
  
 .col-span-1	{grid-column: span 1 / span 1;}

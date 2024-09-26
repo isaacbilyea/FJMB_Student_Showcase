@@ -1677,7 +1677,7 @@ footer {
     .event-card {
         display: block !important;
         margin-top: 40px;
-        min-width: 275px;
+        max-width: 275px;
         height: 432px;
     }
     
@@ -1727,7 +1727,7 @@ footer {
     }
 
     .project-card {
-        min-width: 295px;
+        max-width: 295px;
         height: 445px;
         margin: 75px 0 75px 0;
     }
@@ -1815,6 +1815,7 @@ footer {
 
     .featured-work-card {
         height: 350px;
+        width: 95%;
     }
     
       .featured-work-heading {
@@ -1839,7 +1840,7 @@ footer {
     }
 
     #footer img {
-        width: 20%;
+        max-width: 15%;
     }
      
     #footer p {
@@ -1882,9 +1883,9 @@ footer {
         font-size: 75px;
     }
 
-}
-
-@media screen and (min-width: 1920px) {
-
+    #event-video-con {
+        max-width: 80%;
+        margin: 50px auto;
+    }
 
 }
