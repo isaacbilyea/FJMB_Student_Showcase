@@ -1,3 +1,5 @@
+(()=> {
+
 //VARIABLES
 
 const player = new Plyr('video');
@@ -298,3 +300,4 @@ scrollCards('#testimonial-container', '.testimonial-card', '#testimonial-prev-bt
 
 document.getElementById('hamburger-menu').addEventListener('click', toggleMenu);
 
+})();
