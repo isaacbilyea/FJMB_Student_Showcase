@@ -683,7 +683,6 @@ body {
       transform: translateX(-50%);
     }
   }
-  
 
 #project-exhibit {
     margin-top: 100px;
@@ -851,6 +850,12 @@ body {
     margin: 7px;
 }
 
+#course-text-con {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .main-buttons {
     margin: 40px 0px;
     border-radius: 35px;
@@ -860,6 +865,7 @@ body {
     font-size: 15px;
     font-weight: 700;
     color: white;
+    cursor: pointer;
 }
 
 /* 5. SECTION 3 - Student */
@@ -1740,8 +1746,10 @@ footer {
     }
 
     #project-text {
-        width: 90%;
+        width: 100%;
         margin: 0;
+        padding-right: 50px;
+        line-height: 1.3;
     }
 
     #project-wrapper p {
@@ -1753,13 +1761,13 @@ footer {
         margin: 0;
     }
 
-    #project-photo {
-        width: 90%;
-        height: 363px;
+    #project-goals div {
+        font-size: 18px;
     }
 
-    #project-wrapper {
-        width: 95%;
+    #project-photo {
+        width: 100%;
+        height: 363px;
     }
 
     #project-goals h4 {
