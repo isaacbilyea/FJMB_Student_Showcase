@@ -128,6 +128,10 @@ a {
     color: inherit;
 }
 
+p {
+    line-height: 1.2;
+}
+
 #mobile-break {
     display: block;
 }
@@ -468,25 +472,25 @@ a {
     color: white;
     border-radius: 15px;
     overflow: hidden;
-    width: 70vw;
     height: 475px;
-    min-width: 300px;
-    max-width: 70vw;
+    max-width: 300px;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
     display: none;
 }
 
 #event-card-wrapper {
     position: relative;
+    display: flex;
+    gap: 40px;
 }
 
 #event-next-btn {
-    right: -40px;
+    right: -13%;
     top: 40%;
 }
 
 #event-prev-btn {
-    left: -40px;
+    left: -13%;
     top: 40%;
 }
 
@@ -521,8 +525,10 @@ a {
 
 .event-text {
     font-size: 16px;
-    margin-top: 20px;
-    text-align: center;
+    margin-top: 15px;
+    width: 92%;
+    margin-left: 10px;
+    text-align: left;
 }
 
 .event-time {
@@ -573,8 +579,7 @@ a {
 .project-card {
     border-radius: 25px;
     position: relative;
-    max-width: 70vw;
-    min-width: 300px;
+    max-width: 300px;
     height: 478px;
     border-radius: 20px;
     overflow: hidden;
@@ -586,6 +591,8 @@ a {
 
 .project-card img {
     position: absolute;
+    height: 45%;
+    width: 100%;
 }
 
 .project-placement {
@@ -612,40 +619,34 @@ a {
     right: 0;
 }
 
-#finalists-wrapper {
+#finalists-wrapper, #honour-wrapper {
     position: relative;
     padding: 0;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
 }
 
 #finalists-next-btn {
-    right: -25px;
-    top: 50%;
+    right: -14%;
+    top: 47%;
 }
 
 #finalists-prev-btn {
-    left: -25px;
-    top: 50%;
-}
-
-#honour-wrapper {
-    position: relative;
-    padding: 0;
+    left: -14%;
+    top: 47%;
 }
 
 #honour-next-btn {
-    right: -25px;
-    top: 50%;
+    right: -14%;
+    top: 47%;
 }
 
 #honour-prev-btn {
-    left: -25px;
-    top: 50%;
+    left: -14%;
+    top: 47%;
 }
 
-body {
-    margin: 0;
-  }
-  
   #scroll-images-con {
     position: relative;
     width: 100vw;
@@ -764,10 +765,10 @@ body {
 /* 4b. Testimonials */
 
 #testimonial-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     position: relative;
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 #testimonial-heading {
@@ -777,12 +778,13 @@ body {
 .testimonial-card {
     color: white;
     background: linear-gradient(to bottom, #535353, #616161 60%, #9A9A9A);
-    margin: 20px;
+    margin: 20px 0;
     border-radius: 20px;
     padding: 32px;
-    min-width: 300px;
-    max-width: 70vw;
-    height: 372px;
+    max-width: 300px;
+    height: auto;
+    background-image: url("../images/testimonial-background.png");
+    background-size: cover;
 }
 
 .testimonial-image {
@@ -808,12 +810,12 @@ body {
 }
 
 #testimonial-next-btn {
-    right: -20px;
+    right: -13%;
     top: 40%;
 }
 
 #testimonial-prev-btn {
-    left: -20px;
+    left: -13%;
     top: 40%;
 }
 
@@ -919,6 +921,7 @@ body {
 .featured-work-text {
     font-size: 13px;
     text-align: left;
+    line-height: 1.2;
 }
 
 .featured-work-button {
@@ -944,7 +947,7 @@ body {
 .portfolio-headings h3 {
     color: white;
     font-size: 30px;
-    margin: 80px auto 100px auto;
+    margin: 80px auto 50px auto;
     width: 100%;
 }
 
@@ -1255,17 +1258,16 @@ footer {
 
     .featured-work-card {
         width: 85vw;
-        display: flex;
         height: 240px;
         box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-        position: relative;
         transition: 150ms ease;
         border-radius: 20px;
       }
+
     
       .featured-work-image {
-        position: relative;
-        width: 50%;
+        position: absolute;
+        max-width: 50%;
         -webkit-filter: grayscale(100%);
         filter: grayscale(100%);
       }
@@ -1289,10 +1291,11 @@ footer {
       }
     
       .featured-work-content {
-        width: 50%;
-        position: relative;
+        left: 50%;
+        position: absolute;
+        height: auto;
         top: 0;
-        height: fit-content;
+        justify-content: flex-start;
       }
     
       .featured-work-heading {
@@ -1309,7 +1312,7 @@ footer {
       }
     
       .featured-work-button {
-        bottom: -25px;
+        bottom: 10px;
         right: 20px;
         position: absolute;
         padding: 10px 25px;
@@ -1331,31 +1334,61 @@ footer {
         margin-bottom: 50px;
     }
 
+    #testimonial-container {
+        max-width: 600px;
+    }
+
+    .testimonial-card {
+        max-width: 600px;
+    }
+
+    .testimonial-image {
+        width: 125px;
+        margin-left: 5px;
+        margin-top: 20px;
+    }
+    
+    .testimonial-name {
+        font-size: 35px;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .testimonial-job {
+        font-size: 20px;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .testimonial-text {
+        font-size: 18px;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .arrow {
         display: none;
     }
 
     #testimonial-next-btn {
         display: block;
+        right: -7%;
     }
 
     #testimonial-prev-btn {
         display: block;
+        left: -7%;
     }
 
     .event-card {
         display: block !important;
-        min-width: 220px;
-        width: 20vw;
+        max-width: 220px;
         height: 320px;
         background-color: white;
         transition: 150ms ease;
-    }
-
-    #event-card-wrapper {
-        display: flex;
-        flex-direction: row;
-        gap: 30px;
     }
 
     .event-card img {
@@ -1393,7 +1426,7 @@ footer {
     }
 
     .event-card:hover .event-card-con {
-        top: 45%;
+        top: 40%;
         display: block;
     }
 
@@ -1402,9 +1435,11 @@ footer {
     }
 
     .event-card:hover .event-text {
-        margin-top: 5px;
+        margin-top: 0px;
         font-size: 12px;
         display: block;
+        width: 100%;
+        margin-left: 0px;
     }
 
     .event-card:hover .event-time {
@@ -1423,8 +1458,9 @@ footer {
         -webkit-filter: none;
         filter: none;
     }
-    
-    #finalists-wrapper {
+
+    #finalists-wrapper, #honour-wrapper {
+        max-width: 100vw;
         display: flex;
         flex-direction: row;
         gap: 30px;
@@ -1440,8 +1476,8 @@ footer {
 
     .project-card {
         display: block !important;
-        min-width: 220px;
-        width: 20vw;
+        width: 100%;
+        max-width: 220px;
         height: 320px;
         margin: 75px 0 75px 0;
         background-color: white;
@@ -1690,11 +1726,12 @@ footer {
     }
 
     .event-card:hover .event-card-con {
-        top: 55%;
+        top: 50%;
     }
 
     .event-card:hover .event-text {
         font-size: 16px;
+        margin-top: 10px;
     }
 
     .event-card:hover .event-time {
@@ -1767,7 +1804,6 @@ footer {
 
     #project-photo {
         width: 100%;
-        height: 363px;
     }
 
     #project-goals h4 {
@@ -1790,7 +1826,7 @@ footer {
 
     #course-info-con img {
         width: 100%;
-        margin-top: 45px;
+        margin-top: 52px;
         border-radius: 25px;
     }
 
@@ -1804,7 +1840,7 @@ footer {
     .course-text {
         font-size: 17px;
         width: 100%;
-        margin-left: 30px;
+        margin-left: 50px;
         margin-top: 10px;
         line-height: 1.3;
     }
@@ -1820,7 +1856,7 @@ footer {
     
       .featured-work-heading {
         font-size: 30px;
-        margin-top: 20px;
+        margin-top: 10px;
       }
     
       .featured-work-subheading {
@@ -1833,7 +1869,7 @@ footer {
       }
     
       .featured-work-button {
-        bottom: -40px;
+        bottom: 20px;
         right: 30px;
         padding: 15px 40px;
         font-size: 22px;
