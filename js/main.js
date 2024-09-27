@@ -112,7 +112,7 @@ const devPortfolioLinks = devNames.map(names => {
 
 const testimonialCards = {
 
-    image: ["images/profile-placeholder.png", "images/profile-placeholder.png", "images/profile-placeholder.png"],
+    image: ["images/david-patterson.png", "images/samantha-taylor.png", "images/christopher-martin.png"],
     name: ["David Patterson", "Samantha Taylor", "Christopher Martin"],
     job: ["Marketing Lead, Cineplex Studious", "Northern Commerce, Head of Development", "Tech Alliance, Brand Supervisor"],
     text: ["It’s been a great experience working with these talented students to bring our vision to life. From planning to final development, their skills in multimedia truly impressed us. We’re excited to see all of them succeed!","Seeing the outputs produced by every student was very impressive, mastering their skills in web development, brand designs, and innovative artistry. I am confident that this opens multiple doors of opportunities for them.", "Getting to watch the teams present their final client project is amazing to witness with their professionalism and strengths in navigating through their content. Kudos to all students and their professors. Great work!"]
@@ -168,7 +168,7 @@ function devGrid(name,link){
     devName.textContent = formatName(name);
 
     //The link is displayed as text and the text is linked to the portfolio
-    devLink.textContent = 'LINK';
+    devLink.textContent = "LINK";
     devLink.href = link;
 
     //This makes it so when the link is clicked its open in a new window
