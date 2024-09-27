@@ -576,6 +576,14 @@ p {
 
 /* 4a. Project Exhibit */
 
+#exhibit-heading {
+    margin-top: 50px;
+}
+
+#project-exhibit {
+    margin-top: 100px;
+}
+
 .project-card {
     border-radius: 25px;
     position: relative;
@@ -647,46 +655,71 @@ p {
     top: 47%;
 }
 
-  #scroll-images-con {
-    position: relative;
-    width: 100vw;
-    background-color: #333;
+#scroll-images-con {
     overflow: hidden;
-    z-index: 1;
-    margin: 0;
-    padding: 0;
-  }
-  
-  #scroll-images {
-    overflow: hidden;
-    height: 100%;
-    white-space: nowrap;
-    animation: scrollText 10s infinite linear;
-    margin: 0;
-    font-size: 0;
-    display: flex;
-    justify-content: space-between;
-    width: fit-content;
-  }
-  
-  #scroll-images img {
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-    color: white;
-  }
-  
-  @keyframes scrollText {
-    from {
-      transform: translateX(0%);
-    }
-    to {
-      transform: translateX(-50%);
-    }
-  }
+    margin: 50px 0 75px 0;
+    transition: 150ms ease;
+}
 
-#project-exhibit {
-    margin-top: 100px;
+#scroll-images-con * {
+    transition: 150ms ease;
+}
+
+.scroll-images {
+    display: flex;
+    width: calc((300px) * 14);
+    animation: scrollImages 25s linear infinite;
+}
+
+.scroll-images:nth-of-type(2) {
+    display: none;
+}
+
+.scroll-images:nth-of-type(3) {
+    display: none;
+}
+
+.scroll-content {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#scroll-images-con li {
+    width: 300px;
+    border-radius: 25px;
+    overflow: hidden;
+    transform: scale(0.9);
+}
+
+#scroll-images-con img {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    border-radius: 25px;
+}
+
+@keyframes scrollImages {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+#scroll-images-con:hover #scroll-images {
+    animation-play-state: paused;
+}
+
+#scroll-images-con img:hover {
+    -webkit-filter: none;
+    filter: none;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+#scroll-images-con li:hover {
+    transform: scale(1);
 }
 
 #project-heading h4 {
@@ -777,7 +810,6 @@ p {
 
 .testimonial-card {
     color: white;
-    background: linear-gradient(to bottom, #535353, #616161 60%, #9A9A9A);
     margin: 20px 0;
     border-radius: 20px;
     padding: 32px;
@@ -940,7 +972,7 @@ p {
 /* 5b. Student Portfolios */
 
 #portfolio-background {
-    background: radial-gradient(circle, #A7A7A7 0%, #6E6E6E 25%, #444444 100%);
+    background: radial-gradient(ellipse at top, #A7A7A7 0%, #888888 30%, #444444 80%, #1D1D1D 100%);
     margin-top: 50px;
 }
 
@@ -1634,6 +1666,18 @@ footer {
 
 @media screen and (min-width: 1200px) {
 
+    .scroll-images:nth-of-type(2) {
+        display: flex;
+    }
+
+    .scroll-images:nth-of-type(2) ul {
+        transform: translateX(-150px);
+    }
+
+    .scroll-images:nth-of-type(3) {
+        display: flex;
+    }
+
 
     #student-grid {
         grid-template-columns: repeat(4, 1fr);
@@ -1740,6 +1784,7 @@ footer {
 
     .event-stats {
         margin-right: 70px;
+        margin-bottom: 50px;
     }
 
     .event-stats:first-of-type {
@@ -1922,6 +1967,10 @@ footer {
     #event-video-con {
         max-width: 80%;
         margin: 50px auto;
+    }
+
+    #scroll-images-con {
+        margin: 75px 0 px 0;
     }
 
 }
