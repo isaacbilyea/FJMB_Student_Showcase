@@ -2,122 +2,117 @@
 
 //VARIABLES
 
-const player = new Plyr('video');
+let currentIndex = 0;
 
-const menuItems = document.querySelectorAll('.mobile-menu-item');
+const player = new Plyr('video'),
+      menuItems = document.querySelectorAll('.mobile-menu-item'),
+      studentPortfolioCon = document.querySelector('#student-grid'),
+      devPortfolioCon = document.querySelector('#developer-grid'),
+      testimonialWrapper = document.querySelector('#testimonial-container'),
+      mobileMenu = document.querySelector('#mobile-menu'),
+      hamburgerMenu = document.querySelector('#hamburger-menu');
+
 
 //Students
-const studentNames = [
-"Diego Rodriguez-Ramos", 
-"Kayla Cooper", 
-"Ramona Lozon", 
-"Qingdong Chen", 
-"Taylor Khan", 
-"Cassidy Pelacek-Boutilier", 
-"Ezra Carriere", 
-"Shauraya Salwan", 
-"Rebin Reji Vazhavilayil", 
-"Divij Saddul", 
-"Kyuri Park", 
-"Nikolai Meijer", 
-"Xaviere Hanbury", 
-"Amari Buck", 
-"Thaseekaran Sivaskaran", 
-"Meet Amrutbhai Parmar", 
-"Justin Rian Reyes", 
-"Alisher Yantizhanov", 
-"Parvesh Thakur", 
-"Meghan Damen", 
-"Saif Amjad Omar Abu-Sa'ad", 
-"Bozhi Zhang", 
-"Qiao-Yi Chu", 
-"Sashoye Maxwell", 
-"Dina Bondarchuk", 
-"Wisdom Utenwojo Okutepa", 
-"Ezekiel John Celis", 
-"Katrina Macadams", 
-"Ali El Maniary", 
-"Lok Ting Tina Yam", 
-"Thi Thanh Thuong Nguyen", 
-"Jenifer Quelali Evangelista", 
-"Rodrigo Nobre Do Nascimento", 
-"Milana Gabbassova", 
-"Izel Esteban Cardenas Ramos", 
-"Loi Pan Sit", 
-"Napas Polchai", 
-"Akamjot Singh", 
-"Emmanuel Opadele", 
-"Shon Sojan", 
-"Ishan Mehra", 
-"Shiyon Biju Varghese", 
-"Jashan Kumar",
-"Meetinder Singh Dhaliwal", 
-"Harnoorpreet Kaur", 
-"Sydney Bandarra", 
-"Osarieme Ogbeide", 
-"Tanya Mae Huertas", 
-"Carlos Andres Cano Menendez", 
-"Kamana Bishokarma", 
-"King Yin Sham", 
-"Tapshveer Benipal", 
-"Dixie Marie Laput", 
-"Faizan Khan", 
-"Keith Lie", 
-"Henrique Gamborgi Menezes", 
-"Natchanon Mahaittidon", 
-"Wing Lam Stephanie Chan", 
-"Yi Ting Lai", 
-"Sheldon Gohetia", 
-"Joyal Gregory", 
-"Sukhbhag Singh Sidhu", 
-"Het Shah", 
-"Lav Pareshkumar Patel", 
-"Simon Dasilva", 
-"Wimarsha Heshan Jayasinghe Mudalige", 
-"Gia Khang Ho", 
-"Kristina Bendzsel"
+const studentPortfolios = [
+    { studentName: "Diego Rodriguez-Ramos", portfolioLink: "d.rodriguez-ramos.com" },
+    { studentName: "Kayla Cooper", portfolioLink: "k.cooper.com" },
+    { studentName: "Ramona Lozon", portfolioLink: "r.lozon.com" },
+    { studentName: "Qingdong Chen", portfolioLink: "q.chen.com" },
+    { studentName: "Taylor Khan", portfolioLink: "t.khan.com" },
+    { studentName: "Cassidy Pelacek-Boutilier", portfolioLink: "c.pelacek-boutilier.com" },
+    { studentName: "Ezra Carriere", portfolioLink: "e.carriere.com" },
+    { studentName: "Shauraya Salwan", portfolioLink: "s.salwan.com" },
+    { studentName: "Rebin Reji Vazhavilayil", portfolioLink: "r.vazhavilayil.com" },
+    { studentName: "Divij Saddul", portfolioLink: "d.saddul.com" },
+    { studentName: "Kyuri Park", portfolioLink: "k.park.com" },
+    { studentName: "Nikolai Meijer", portfolioLink: "n.meijer.com" },
+    { studentName: "Xaviere Hanbury", portfolioLink: "x.hanbury.com" },
+    { studentName: "Amari Buck", portfolioLink: "a.buck.com" },
+    { studentName: "Thaseekaran Sivaskaran", portfolioLink: "t.sivaskaran.com" },
+    { studentName: "Meet Amrutbhai Parmar", portfolioLink: "m.parmar.com" },
+    { studentName: "Justin Rian Reyes", portfolioLink: "j.reyes.com" },
+    { studentName: "Alisher Yantizhanov", portfolioLink: "a.yantizhanov.com" },
+    { studentName: "Parvesh Thakur", portfolioLink: "p.thakur.com" },
+    { studentName: "Meghan Damen", portfolioLink: "m.damen.com" },
+    { studentName: "Saif Amjad Omar Abu-Sa'ad", portfolioLink: "s.abu-sa-ad.com" },
+    { studentName: "Bozhi Zhang", portfolioLink: "b.zhang.com" },
+    { studentName: "Qiao-Yi Chu", portfolioLink: "q.chu.com" },
+    { studentName: "Sashoye Maxwell", portfolioLink: "s.maxwell.com" },
+    { studentName: "Dina Bondarchuk", portfolioLink: "d.bondarchuk.com" },
+    { studentName: "Wisdom Utenwojo Okutepa", portfolioLink: "w.okutepa.com" },
+    { studentName: "Ezekiel John Celis", portfolioLink: "e.celis.com" },
+    { studentName: "Katrina Macadams", portfolioLink: "k.macadams.com" },
+    { studentName: "Ali El Maniary", portfolioLink: "a.maniary.com" },
+    { studentName: "Lok Ting Tina Yam", portfolioLink: "l.yam.com" },
+    { studentName: "Thi Thanh Thuong Nguyen", portfolioLink: "t.nguyen.com" },
+    { studentName: "Jenifer Quelali Evangelista", portfolioLink: "j.evangelista.com" },
+    { studentName: "Rodrigo Nobre Do Nascimento", portfolioLink: "r.nascimento.com" },
+    { studentName: "Milana Gabbassova", portfolioLink: "m.gabbassova.com" },
+    { studentName: "Izel Esteban Cardenas Ramos", portfolioLink: "i.ramos.com" },
+    { studentName: "Loi Pan Sit", portfolioLink: "l.sit.com" },
+    { studentName: "Napas Polchai", portfolioLink: "n.polchai.com" },
+    { studentName: "Akamjot Singh", portfolioLink: "a.singh.com" },
+    { studentName: "Emmanuel Opadele", portfolioLink: "e.opadele.com" },
+    { studentName: "Shon Sojan", portfolioLink: "s.sojan.com" },
+    { studentName: "Ishan Mehra", portfolioLink: "i.mehra.com" },
+    { studentName: "Shiyon Biju Varghese", portfolioLink: "s.varghese.com" },
+    { studentName: "Jashan Kumar", portfolioLink: "j.kumar.com" },
+    { studentName: "Meetinder Singh Dhaliwal", portfolioLink: "m.dhaliwal.com" },
+    { studentName: "Harnoorpreet Kaur", portfolioLink: "h.kaur.com" },
+    { studentName: "Sydney Bandarra", portfolioLink: "s.bandarra.com" },
+    { studentName: "Osarieme Ogbeide", portfolioLink: "o.ogbeide.com" },
+    { studentName: "Tanya Mae Huertas", portfolioLink: "t.huertas.com" },
+    { studentName: "Carlos Andres Cano Menendez", portfolioLink: "c.menendez.com" },
+    { studentName: "Kamana Bishokarma", portfolioLink: "k.bishokarma.com" },
+    { studentName: "King Yin Sham", portfolioLink: "k.sham.com" },
+    { studentName: "Tapshveer Benipal", portfolioLink: "t.benipal.com" },
+    { studentName: "Dixie Marie Laput", portfolioLink: "d.laput.com" },
+    { studentName: "Faizan Khan", portfolioLink: "f.khan.com" },
+    { studentName: "Keith Lie", portfolioLink: "k.lie.com" },
+    { studentName: "Henrique Gamborgi Menezes", portfolioLink: "h.menezes.com" },
+    { studentName: "Natchanon Mahaittidon", portfolioLink: "n.mahaittidon.com" },
+    { studentName: "Wing Lam Stephanie Chan", portfolioLink: "w.chan.com" },
+    { studentName: "Yi Ting Lai", portfolioLink: "y.lai.com" },
+    { studentName: "Sheldon Gohetia", portfolioLink: "s.gohetia.com" },
+    { studentName: "Joyal Gregory", portfolioLink: "j.gregory.com" },
+    { studentName: "Sukhbhag Singh Sidhu", portfolioLink: "s.sidhu.com" },
+    { studentName: "Het Shah", portfolioLink: "h.shah.com" },
+    { studentName: "Lav Pareshkumar Patel", portfolioLink: "l.patel.com" },
+    { studentName: "Simon Dasilva", portfolioLink: "s.dasilva.com" },
+    { studentName: "Wimarsha Heshan Jayasinghe Mudalige", portfolioLink: "w.mudalige.com" },
+    { studentName: "Gia Khang Ho", portfolioLink: "g.ho.com" },
+    { studentName: "Kristina Bendzsel", portfolioLink: "k.bendzsel.com" }
 ];
-
-//The map method creates a new array so you can apply functions to each element inside the original array
-const portfolioLinks = studentNames.map(names => {
-
-    //This takes the first initial by using the slice method with an index of 0 to 1 which is basically just 
-    //the first letter of each string and then converts it to lower case
-    const firstInitial = names.slice(0, 1).toLowerCase();
-
-    //This looks for the last space in each name in the array and then the +1 takes whatever is
-    //after the last space using the slice method and then converts it to lower case
-    const lastName = names.slice(names.lastIndexOf(' ') + 1).toLowerCase();
-  
-    //This '${}' allows you to put expressions inside a string without having to do a bunch of +'s signs basically
-    return `${firstInitial}.${lastName}.com`;
-});
-
-
+    
 //Developers
-const devNames = [
-    "Bryle Flores", 
-    "Music Juntarattanakamol", 
-    "Isaac Bilyea",
-    "Bernardo Jr. Macapagal"
+const devPortfolios = [
+    { devName: "Bryle Flores", devLink: "b.flores.com" },
+    { devName: "Music Juntarattanakamol", devLink: "m.juntarattanakamol.com" },
+    { devName: "Isaac Bilyea", devLink: "i.bilyea.com" },
+    { devName: "Bernardo Jr. Macapagal", devLink: "b.macapagal.com" }
 ];
 
-//See portfolioLinks for descriptions
-const devPortfolioLinks = devNames.map(names => {
-    const firstInitial = names.slice(0, 1).toLowerCase();
-    const lastName = names.slice(names.lastIndexOf(' ') + 1).toLowerCase();
-  
-    return `${firstInitial}.${lastName}.com`;
-});
-
-const testimonialCards = {
-
-    image: ["images/david-patterson.png", "images/samantha-taylor.png", "images/christopher-martin.png"],
-    name: ["David Patterson", "Samantha Taylor", "Christopher Martin"],
-    job: ["Marketing Lead, Cineplex Studious", "Northern Commerce, Head of Development", "Tech Alliance, Brand Supervisor"],
-    text: ["It’s been a great experience working with these talented students to bring our vision to life. From planning to final development, their skills in multimedia truly impressed us. We’re excited to see all of them succeed!","Seeing the outputs produced by every student was very impressive, mastering their skills in web development, brand designs, and innovative artistry. I am confident that this opens multiple doors of opportunities for them.", "Getting to watch the teams present their final client project is amazing to witness with their professionalism and strengths in navigating through their content. Kudos to all students and their professors. Great work!"]
-
-};
+const testimonialCards = [
+    {
+        name: "David Patterson",
+        job: "Marketing Lead, Cineplex Studios",
+        image: "images/david-patterson.png",
+        text: "It’s been a great experience working with these talented students to bring our vision to life. From planning to final development, their skills in multimedia truly impressed us. We’re excited to see all of them succeed!"
+    },
+    {
+        name: "Samantha Taylor",
+        job: "Northern Commerce, Head of Development",
+        image: "images/samantha-taylor.png",
+        text: "Seeing the outputs produced by every student was very impressive, mastering their skills in web development, brand designs, and innovative artistry. I am confident that this opens multiple doors of opportunities for them."
+    },
+    {
+        name: "Christopher Martin",
+        job: "Tech Alliance, Brand Supervisor",
+        image: "images/christopher-martin.png",
+        text: "Getting to watch the teams present their final client project is amazing to witness with their professionalism and strengths in navigating through their content. Kudos to all students and their professors. Great work!"
+    }
+];
 
 //FUNCTIONS
 
@@ -134,99 +129,60 @@ function formatName(fullName) {
 
 }
 
-//This function creates the HTML elements and appends them appropriately 
-function studentGrid(name,link){
+studentPortfolios.forEach(portfolio => {
 
-    //This div is a container for each student, including their name and link
     let studentCon = document.createElement('div');
-
     let studentLink = document.createElement('a');
 
-    //The link is displayed as text and the text is linked to the portfolio
-    studentLink.textContent = formatName(name);
-    studentLink.href = link;
+    studentLink.textContent = formatName(portfolio.studentName);
+    studentLink.href = `https://${portfolio.portfolioLink}`;
 
-    //This makes it so when the name is clicked its open in a new window
     studentLink.target = "_blank";
 
-    //This puts the name and link inside the div created above
     studentCon.appendChild(studentLink);
 
-    //This appends that div to the div already exisiting inside the HTML to keep the grid in one container
-    document.getElementById('student-grid').appendChild(studentCon);
-};
+    studentPortfolioCon.appendChild(studentCon);
+});
 
-//This function creates the HTML elements and appends them appropriately 
-function devGrid(name,link){
+devPortfolios.forEach(dev => {
 
-    //This div is a container for each student, including their name and link
     let devCon = document.createElement('div');
-
     let devName = document.createElement('p');
     let devLink = document.createElement('button');
 
-    devName.textContent = formatName(name);
-
-    //The link is displayed as text and the text is linked to the portfolio
+    devName.textContent = formatName(dev.devName);
+    
     devLink.textContent = "LINK";
-    devLink.href = link;
-
-    //This makes it so when the link is clicked its open in a new window
+    devLink.href = `https://${dev.devLink}`;
     devLink.target = "_blank";
 
-    devLink.addEventListener('click', function() {
-        window.open(link);
-    });
-
-    //This puts the name and link inside the div created above
     devCon.appendChild(devName);
     devCon.appendChild(devLink);
 
-    //This appends that div to the div already exisiting inside the HTML to keep the grid in one container
-    document.getElementById('developer-grid').appendChild(devCon);
-};
+    devPortfolioCon.appendChild(devCon);
+});
 
 function toggleMenu() {
-    document.getElementById('hamburger-menu').classList.toggle('activate');
-    document.getElementById('mobile-menu').classList.toggle('show');
+    hamburgerMenu.classList.toggle('activate');
+    mobileMenu.classList.toggle('show');
 };
 
-//This goes through each item in the studentNames and portfolioLinks array and calls the above studentGrid function
-for(let i = 0; i < studentNames.length; i++){
-
-    let name = studentNames[i];
-    let link = portfolioLinks[i];
-    studentGrid(name, link);
-
-};
-
-for(let i = 0; i < devNames.length; i++){
-
-    let name = devNames[i];
-    let link = devPortfolioLinks[i];
-    devGrid(name,link);
-
-};
-
-//This loops through the testimonialCards object 
-for(let i = 0; i < testimonialCards.name.length; i++){
-
-    let currentIndex = 0;
+testimonialCards.forEach((testimonial, i) => {
 
     //Creates a div for each testimonial card
     let testimonialCon = document.createElement('div');
-
+    
     //Creates elements for each card
     let image = document.createElement('img');
     let name = document.createElement('p');
     let job = document.createElement('p');
     let text = document.createElement('p');
 
-    //Applies elements to their respective array
-    image.src = testimonialCards.image[i];
-    name.textContent = testimonialCards.name[i];
-    job.textContent = testimonialCards.job[i];
-    text.textContent = testimonialCards.text[i];
+    //Applies elements to their respective properties from the object
+    image.src = testimonial.image;
+    name.textContent = testimonial.name;
+    job.textContent = testimonial.job;
+    text.textContent = testimonial.text;
 
     //Adds classes to each element to allow for CSS styling
     testimonialCon.classList.add('testimonial-card');
@@ -235,6 +191,7 @@ for(let i = 0; i < testimonialCards.name.length; i++){
     text.classList.add('testimonial-text');
     image.classList.add('testimonial-image');
 
+    // Only display the first card (index 0)
     if (i !== currentIndex) {
         testimonialCon.style.display = 'none';
     }
@@ -245,17 +202,15 @@ for(let i = 0; i < testimonialCards.name.length; i++){
     testimonialCon.setAttribute('data-index', i);
 
     //Appends the card to the already existing div inside the html acting as a wrapper
-    document.getElementById('testimonial-container').appendChild(testimonialCon);
+    testimonialWrapper.appendChild(testimonialCon);
 
-};
+});
 
 //This adds an event listener to all the menu items so the menu is toggled off when a menu item is clicked
-for (items of menuItems) {
-
-    const links = items.querySelector('a');
+menuItems.forEach(item => {
+    const links = item.querySelector('a');
     links.addEventListener('click', toggleMenu);
-
-};
+});
 
 //This function is for scrolling through multiple cards using arrows
 //I made it reusable by taking in 4 elements and then calling the functions for their respective containers, cards and arrows
@@ -298,6 +253,6 @@ scrollCards('#testimonial-container', '.testimonial-card', '#testimonial-prev-bt
 
 // EVENT LISTENERS
 
-document.getElementById('hamburger-menu').addEventListener('click', toggleMenu);
+hamburgerMenu.addEventListener('click', toggleMenu);
 
 })();
