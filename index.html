@@ -8,6 +8,7 @@
     <link href="css/main.css" rel="stylesheet">
     <link rel="icon" href="images/favicon-16x16.png" sizes="16x16" type="image/png">
     <link rel="icon" href="images/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <title>Fanshawe Industry Night</title>
 </head>
 
@@ -62,26 +63,26 @@
             <li class="full-menu-item">
                 <a href="#event-anchor">EVENT</a>
                 <div class="submenu">
-                    <a href="#featured-works">EVENT VIDEO</a>
-                    <a href="#student-portfolios" class="highlight">EVENT DETAILS</a>
+                    <a href="#event-video-anchor">EVENT VIDEO</a>
+                    <a href="#event-details-anchor" class="highlight">EVENT DETAILS</a>
                 </div>
             </li>
             <li class="full-menu-item">
                 <a href="#project-anchor">PROJECT</a>
                 <div class="submenu">
-                    <a href="#featured-works">FINALISTS</a>
-                    <a href="#student-portfolios" class="highlight">EXHIBIT</a>
-                    <a href="#meet-developers">CLIENT INFO</a>
-                    <a href="#meet-developers">TESTIMONIALS</a>
+                    <a href="#finalists-anchor">FINALISTS</a>
+                    <a href="#exhibit-anchor" class="highlight">EXHIBIT</a>
+                    <a href="#client-anchor">CLIENT INFO</a>
+                    <a href="#testimonials-anchor">TESTIMONIALS</a>
                 </div>
             </li>
             <li class="full-menu-item">
                 <a href="#program-anchor">PROGRAM</a>
                 <div class="submenu">
-                    <a href="#featured-works">PROGRAM INFO</a>
-                    <a href="#student-portfolios" class="highlight">FEATURED WORKS</a>
-                    <a href="#meet-developers">STUDENTS</a>
-                    <a href="#meet-developers">DEVELOPERS</a>
+                    <a href="#program-anchor">PROGRAM INFO</a>
+                    <a href="#featured-work-anchor" class="highlight">FEATURED WORKS</a>
+                    <a href="#student-anchor">STUDENTS</a>
+                    <a href="#developer-anchor">DEVELOPERS</a>
                 </div>
             </li>
         </ul>
@@ -125,12 +126,14 @@
             <source src="videos/Industry_Night_Promotional_Video.mp4" type="video/mp4">
             <p>Oops, something went wrong. You may be using an outdated browser or have javascript disabled.</p>
         </video>
+        <a id="event-video-anchor"></a>
     </div>
 </section>
 
 <!--Event Info-->
 <section id="event-info">
     <h2 class="hidden">Event Info</h2>
+    <a id="event-details-anchor"></a>
     <div id="event-info-con" class="grid-con">
         <div class="col-span-full m-col-start-1 m-col-end-6 l-col-start-2 l-col-end6">
             <img id="trophy-logo"
@@ -258,6 +261,7 @@
 <a id="project-anchor"></a>
 <section id="project-exhibit">
     <h2 class="hidden">Project Exhibit</h2>
+    <a id="finalists-anchor"></a>
     <div id="finalists-heading" class="col-span-full">
         <h3 class="section-headings">THE <span>FINALISTS</span></h3>
     </div>
@@ -381,6 +385,7 @@
         <div id="honour-prev-btn" class="arrow">&#10094;</div>
         <div id="honour-next-btn" class="arrow">&#10095;</div>
     </div>
+    <a id="exhibit-anchor"></a>
     <div id="exhibit-heading" class="col-span-full">
         <h3 class="section-headings">PROJECT <span>EXHIBIT</span></h3>
     </div>
@@ -975,6 +980,7 @@
         </div>
     </div>
     <div id="project-heading" class="col-span-full">
+        <a id="client-anchor"></a>
         <h3 class="section-headings">OUR <span>CLIENT</span></h3>
         <h4>BROTHERS IN ARMS MEMORIAL</h4>
         <p class="section-subheadings">SRISHTI FOUNDATION</p>
@@ -1020,6 +1026,7 @@
 
 <!--Testimonials-->
 <section id="testimonials" class="grid-con">
+    <a id="testimonials-anchor"></a>
     <h2 class="hidden">Testimonials</h2>
     <div id="testimonial-heading" class="col-span-full">
         <h3 class="section-headings">WHAT PEOPLE <span>SAY</span></h3>
@@ -1066,6 +1073,7 @@
 
 <!--Featured Work-->
 <section id="student-work" class="grid-con">
+    <a id="featured-work-anchor"></a>
     <h2 class="hidden">Student Work</h2>
     <div id="featured-works-heading" class="col-span-full">
         <h3 class="section-headings">FEATURED <span>WORK</span></h3>
@@ -1186,6 +1194,7 @@
 
 <!--Student Portfolios-->
 <div id="portfolio-background">
+    <a id="student-anchor"></a>
     <section id="student-portfolios" class="grid-con">
         <h2 class="hidden">Student Portfolios</h2>
         <div class="portfolio-headings col-span-full">
@@ -1196,6 +1205,7 @@
 
 <!--Developer Portfolios-->
     <section id="developer-portfolios" class="grid-con">
+        <a id="developer-anchor"></a>
         <h2 class="hidden">Developer Portfolios</h2>
         <div class="portfolio-headings col-span-full">
             <h3 class="section-headings">MEET THE DEVELOPERS</h3>
@@ -1270,6 +1280,8 @@
 </footer>
 
 <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 <script src="js/main.js"></script>
 
 </body>
