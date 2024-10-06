@@ -255,4 +255,21 @@ scrollCards('#testimonial-container', '.testimonial-card', '#testimonial-prev-bt
 
 hamburgerMenu.addEventListener('click', toggleMenu);
 
+// gsap.defaults({
+//     duration: 1,  // Default duration for all animations
+//     ease: "power3.out",  // Default easing function
+//     opacity: 0,  // Default starting opacity
+//     y: 50  // Default Y translation to animate from
+//   });
+  
+//   gsap.utils.toArray(['.event-card', '.project-card', '#event-video']).forEach((element) => {
+//     gsap.from(element, {
+//       scrollTrigger: {
+//         trigger: element,
+//         start: "top bottom-=100",  // Adjust as needed for when to start the animation
+//         toggleActions: "play none none reverse"  // ScrollTrigger behavior
+//       }
+//     });
+//   });
+
 })();

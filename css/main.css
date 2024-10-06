@@ -111,6 +111,7 @@ html, body {
     margin: 0;
     box-sizing: border-box; 
     background-color: #F5F5F5;
+    scroll-behavior: smooth;
 }
 
 *, *::before, *::after {
@@ -1621,7 +1622,7 @@ footer {
     .full-menu-item:hover {
         background-color: white;
         transition: 150ms ease;
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        box-shadow: 1px 5px 4px rgba(0, 0, 0, 0.1);
     }
     
     .submenu {
@@ -1634,7 +1635,7 @@ footer {
     .full-menu-item:hover .submenu {
         display: flex;
         flex-direction: column;
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        box-shadow: 1px 5px 4px rgba(0, 0, 0, 0.1);
     }
     
     .submenu a {
@@ -1646,9 +1647,8 @@ footer {
     }
     
     .submenu a:hover {
-        background-color: #BC2519;
         color: white;
-        transition: 0.3s ease;
+        transition: 150ms ease;
     }
 
     .submenu a::before {
@@ -1679,7 +1679,7 @@ footer {
     }
     
     .full-menu-item:hover .submenu a {
-        animation: fadeInDesktop 0.5s ease-in-out forwards;
+        animation: fadeInDesktop 0.3s ease-in-out forwards;
     }
     
     .full-menu-item:hover .submenu a:nth-child(1) {
