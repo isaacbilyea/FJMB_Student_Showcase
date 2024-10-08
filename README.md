@@ -2,7 +2,7 @@
 
 Welcome to our repository where we are responsible for designing and developing a responsive website to showcase portfolios for the upcoming Industry Night event. The purpose of the website is to provide a platform for students to display their skills, projects, and achievements to potential employers, industry professionals, and peers. Additionally, the site will include information about the Interactive Media Design program, client projects, testimonials, and details about the event. This project is a collaborative effort across all of our IDP classes. Thanks for visiting!
 
-![Hackathon Readme Photo](/images/hackathon_readme.png)
+![Hackathon Readme Photo](/images/Promo_Video_Thumbnail.png)
 
 ## Installation :wrench:
 
@@ -41,7 +41,8 @@ Download the zipped code folder or fork the cloned repository to open the full f
 - September 25, 2024
 - September 26, 2024
 - September 27, 2024
-- October 5, 2024
+- October 05, 2024
+- October 08, 2024
 
 ## Credits :pen:
 
