@@ -87,10 +87,10 @@ const studentPortfolios = [
     
 //Developers
 const devPortfolios = [
-    { devName: "Bryle Flores", devLink: "b.flores.com" },
-    { devName: "Music Juntarattanakamol", devLink: "m.juntarattanakamol.com" },
-    { devName: "Isaac Bilyea", devLink: "i.bilyea.com" },
-    { devName: "Bernardo Jr. Macapagal", devLink: "b.macapagal.com" }
+    { devName: "Bryle Flores", devLink: "b.floresdesigns.com" },
+    { devName: "Music Jun.", devLink: "mujun.com" },
+    { devName: "Isaac Bilyea", devLink: "isaacbilyea.com" },
+    { devName: "Bernardo Mac.", devLink: "bermac.com" }
 ];
 
 const testimonialCards = [
@@ -150,9 +150,9 @@ devPortfolios.forEach(dev => {
     let devName = document.createElement('p');
     let devLink = document.createElement('button');
 
-    devName.textContent = formatName(dev.devName);
+    devName.textContent = dev.devName;
     
-    devLink.textContent = "LINK";
+    devLink.textContent = dev.devLink;
     devLink.href = `https://${dev.devLink}`;
     devLink.target = "_blank";
 
