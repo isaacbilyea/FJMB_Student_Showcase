@@ -215,19 +215,38 @@ menuItems.forEach(item => {
 //This function is for scrolling through multiple cards using arrows
 //I made it reusable by taking in 4 elements and then calling the functions for their respective containers, cards and arrows
 function scrollCards(cardContainer, cardClass, prevBtn, nextBtn) {
-    //This puts all the cards in a variable, container is needed first as finalists and honour have the same card class
-    const cards = document.querySelectorAll(`${cardContainer} ${cardClass}`);
+    
+    const container = document.querySelector(cardContainer),
+    cards = document.querySelectorAll(`${cardContainer} ${cardClass}`), //This puts all the cards in a variable, container is needed first as finalists and honour have the same card class
+    prevButton = document.querySelector(prevBtn),
+    nextButton = document.querySelector(nextBtn),
+    dotContainer = container.querySelector('.dot-container'),
+    dots = [];
+    
     let currentIndex = 0;
-    const prevButton = document.querySelector(prevBtn);
-    const nextButton = document.querySelector(nextBtn);
+
+
+    for (let i = 0; i < cards.length; i++) {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+
+        if (i === currentIndex) {
+            dot.classList.add('active');
+        }
+        
+        dotContainer.appendChild(dot);
+        dots.push(dot);
+    }
 
     //This goes through the cards and hides all the ones that aren't at the current index
-    function showCard(index) {
+    function showCard(currentIndex) {
         for (let i = 0; i < cards.length; i++) {
-            if (i === index) {
+            if (i === currentIndex) {
                 cards[i].style.display = 'block';
+                dots[i].classList.add('active');
             } else {
-                cards[i].style.display = 'none'; 
+                cards[i].style.display = 'none';
+                dots[i].classList.remove('active');
             }
         }
     }

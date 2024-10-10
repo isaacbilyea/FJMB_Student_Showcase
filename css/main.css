@@ -141,6 +141,28 @@ p {
     display: none;
 }
 
+.dot-container {
+    text-align: center;
+    position: absolute;
+    bottom: -10%;
+    left: 0;
+    right: 0;
+}
+
+.dot {
+    display: inline-block;
+    width: .75rem;
+    height: .75rem;
+    background-color: #D9D8D8;
+    border-radius: 50%;
+    margin: 0.3125rem;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #AFAFAF;
+}
+
 /* 2. HEADER */
 
 #banner {
@@ -228,7 +250,7 @@ p {
 }
 
 #mobile-menu ul {
-    margin: 2.5rem 0 1rem 0;
+    margin: 2.5rem 0rem 1rem 0;
     padding: 0;
 }
 
@@ -241,6 +263,8 @@ p {
     font-weight: 700;
     position: relative;
     cursor: pointer;
+    margin-left: 1rem;
+    list-style-type: none;
     padding: 0.75rem 1.875rem;
 }
 
@@ -800,7 +824,7 @@ p {
 }
 
 #goals-button {
-    margin: 0 auto;
+    margin: 3rem auto;
 }
 
 /* 4b. Testimonials */
@@ -810,6 +834,10 @@ p {
     max-width: 18.75rem;
     width: 100%;
     margin: 0 auto;
+}
+
+#testimonial-container .dot-container {
+    bottom: -7%;
 }
 
 #testimonial-heading {
@@ -1221,6 +1249,10 @@ footer {
         margin-top: 0.625rem;
     }
 
+    .dot-container {
+        display: none;
+    }
+
     /* 2. HEADER */
 
     #banner {
@@ -1280,13 +1312,14 @@ footer {
         height: 100%;
         object-fit: cover;
         margin-top: 0;
-        padding-right: 1.875rem;
+        padding: 1rem;
     }
 
     #event-info-heading h3 {
         text-align: left;
         width: 100%;
         margin: 0;
+        margin-top: 1rem;
         font-size: 2.5rem;
     }
 
@@ -1468,6 +1501,10 @@ footer {
 
     #testimonial-container {
         max-width: 37.5rem;
+    }
+
+    #testimonial-container .dot-container {
+        display: block;
     }
 
     .testimonial-card {
@@ -1900,9 +1937,15 @@ footer {
         margin-top: 5rem;
     }
 
+    #trophy-logo {
+        padding-left: 3.5rem;
+        padding-right: 0rem;
+    }
+
     #event-info-text p {
         font-size: 1.125rem;
         line-height: 1.2;
+        padding-right: 4rem;
     }
 
     #event-info-right {
@@ -1976,7 +2019,7 @@ footer {
     .event-card:hover {
         background-color: #1D1D1D;
         box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
-        scale: 1.05;
+        transform: scale(1.05);
     }
 
     .event-card:hover img {
@@ -2032,7 +2075,7 @@ footer {
     .project-card:hover {
         background-color: #1D1D1D;
         box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
-        scale: 1.005;
+        transform: scale(1.01);
     }
 
     .project-card:hover img {
@@ -2167,7 +2210,7 @@ footer {
     }
 
     #course-button {
-        margin: 1.25rem -1.875rem 3.125rem auto;
+        margin: 1.25rem auto 3.125rem 1rem;
     }
 
     /* 5. SECTION 3 - Student */
@@ -2212,7 +2255,7 @@ footer {
 
     .featured-work-card:hover {
         box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
-        scale: 1.005;
+        transform: scale(1.01);
     }
 
     .featured-work-card:hover .featured-work-image {
@@ -2319,7 +2362,7 @@ footer {
     }
 
     #thankyou-fanshawe {
-        margin-top: 0;
+        margin-top: 5.5rem;
     }
 
     #thankyou-fanshawe h3 {
