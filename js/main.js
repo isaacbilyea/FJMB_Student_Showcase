@@ -148,7 +148,7 @@ devPortfolios.forEach(dev => {
 
     let devCon = document.createElement('div');
     let devName = document.createElement('p');
-    let devLink = document.createElement('button');
+    let devLink = document.createElement('a');
 
     devName.textContent = dev.devName;
     
