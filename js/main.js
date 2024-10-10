@@ -87,7 +87,7 @@ const studentPortfolios = [
     
 //Developers
 const devPortfolios = [
-    { devName: "Bryle Flores", devLink: "b.floresdesigns.com" },
+    { devName: "Bryle Flores", devLink: "bfdesigns.com" },
     { devName: "Music Jun.", devLink: "mujun.com" },
     { devName: "Isaac Bilyea", devLink: "isaacbilyea.com" },
     { devName: "Bernardo Mac.", devLink: "bermac.com" }
@@ -218,6 +218,8 @@ function scrollCards(cardContainer, cardClass, prevBtn, nextBtn) {
     //This puts all the cards in a variable, container is needed first as finalists and honour have the same card class
     const cards = document.querySelectorAll(`${cardContainer} ${cardClass}`);
     let currentIndex = 0;
+    const prevButton = document.querySelector(prevBtn);
+    const nextButton = document.querySelector(nextBtn);
 
     //This goes through the cards and hides all the ones that aren't at the current index
     function showCard(index) {
@@ -234,15 +236,18 @@ function scrollCards(cardContainer, cardClass, prevBtn, nextBtn) {
     showCard(currentIndex);
 
     //Adds event listeners to buttons
-    document.querySelector(prevBtn).addEventListener('click', function() {
+    function prevClick() {
         currentIndex = (currentIndex - 1 + cards.length) % cards.length;//% cards.length makes it wrap around -> eg. 3%3=0 (first card)
         showCard(currentIndex);
-    });
+    }
 
-    document.querySelector(nextBtn).addEventListener('click', function() {
+    function nextClick() {
         currentIndex = (currentIndex + 1) % cards.length;
         showCard(currentIndex);
-    });
+    }
+
+    prevButton.addEventListener('click', prevClick);
+    nextButton.addEventListener('click', nextClick);
 }
 
 //These call the function created above with their respective id's and classes
@@ -255,21 +260,30 @@ scrollCards('#testimonial-container', '.testimonial-card', '#testimonial-prev-bt
 
 hamburgerMenu.addEventListener('click', toggleMenu);
 
-// gsap.defaults({
-//     duration: 1,  // Default duration for all animations
-//     ease: "power3.out",  // Default easing function
-//     opacity: 0,  // Default starting opacity
-//     y: 50  // Default Y translation to animate from
-//   });
-  
-//   gsap.utils.toArray(['.event-card', '.project-card', '#event-video']).forEach((element) => {
-//     gsap.from(element, {
-//       scrollTrigger: {
-//         trigger: element,
-//         start: "top bottom-=100",  // Adjust as needed for when to start the animation
-//         toggleActions: "play none none reverse"  // ScrollTrigger behavior
-//       }
-//     });
-//   });
-
 })();
+
+//GSAP
+
+// (()=> {
+
+// gsap.registerPlugin(ScrollTrigger);   
+
+// gsap.utils.toArray(".project-card").forEach(card => {
+
+// gsap.set(card, { opacity: 0, y: 50 });
+
+// gsap.to(card, {
+//     scrollTrigger: {
+//       trigger: card,
+//       start: "top 80%",
+//       end: "bottom 20%", 
+//       toggleActions: "play none none reverse",
+//     },
+//     opacity: 1,
+//     y: 0,
+//     duration: 1,
+//     ease: "power1.out"
+//   });
+// });
+
+// })();
