@@ -284,7 +284,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 //gsap.utils is a collection of methods from GSAP
 //Takes a bunch of elements and turns them into an Array so we can mass apply a basic scrollTrigger animation
-gsap.utils.toArray(".section-headings, .section-subheadings, #student-grid div, .featured-work-card, #event-info-con *, #event-stats-con *, #project-exhibit ul, #project-heading h4, #client-con *, #testimonial-container, #course-info-con *, #developer-portfolios div, #event-video-con").forEach((item) => {
+gsap.utils.toArray(".section-headings, .section-subheadings, #student-grid div, .featured-work-card, #event-info-con *, #event-stats-con *, #scroll-images-con, #project-heading h4, #client-con *, #testimonial-container, #course-info-con *, #developer-portfolios div, #event-video-con").forEach((item) => {
 
 //Sets initial state
 gsap.set(item, { opacity: 0, y: 50 });
