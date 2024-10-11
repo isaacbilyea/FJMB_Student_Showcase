@@ -746,12 +746,13 @@ p {
     width: 100%;
     background-image: url(../images/Hackathon-wave-412-1.png);
     padding-bottom: 56.25%;
-    margin-bottom: -15%;
-    margin-top: -35%;
-    background-size: 120%;
+    margin-bottom: -5%;
+    margin-top: -30%;
+    background-size: 150%;
     background-position: center;
     background-repeat: no-repeat; 
     overflow: hidden;
+    pointer-events: none;
 }
 
 #project-heading h4 {
@@ -905,9 +906,10 @@ p {
     background-image: url(../images/Hackathon-wave-412-2.png);
     padding-bottom: 56.25%;
     background-size: 130%;
-    margin: -20% 0 -10% 0;
+    margin-top: -10%;
     background-position: center;
     background-repeat: no-repeat; 
+    pointer-events: none;
 }
 
 /* 4c. Course Info */
@@ -1473,7 +1475,9 @@ footer {
     }
 
     #wave-background-1 {
-        margin-top: -25%;
+        margin-top: -20%;
+        margin-bottom: -10%;
+        background-size: 125%;
     }
 
     #project-text h4 {
@@ -2139,7 +2143,9 @@ footer {
     #wave-background-1 {
         background-image: url(../images/Hackathon-wave-1200-top.png);
         transform: rotate(-5deg);
-        margin-bottom: -30%;
+        background-size: 150%;
+        margin-bottom: -25%;
+        margin-top: -20%;
     }
 
     #project-text {
@@ -2181,8 +2187,9 @@ footer {
     /* 4b. Testimonials */
 
     #wave-background-2 {
-        margin-top: -27%;
-        margin-bottom: -17%;
+        margin-top: -22%;
+        margin-bottom: -12%;
+        background-size: 150%;
         background-image: url(../images/Hackathon-wave-1200-bot.png);
     }
 

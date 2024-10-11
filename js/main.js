@@ -221,24 +221,19 @@ function scrollCards(cardContainer, cardClass, prevBtn, nextBtn) {
     prevButton = document.querySelector(prevBtn),
     nextButton = document.querySelector(nextBtn),
     dotContainer = container.querySelector('.dot-container'),
-    dots = [];
-    
-    let currentIndex = 0;
-
+    dots = []; //empty array
 
     for (let i = 0; i < cards.length; i++) {
+        //creates a dot for each card
         const dot = document.createElement('span');
         dot.classList.add('dot');
 
-        if (i === currentIndex) {
-            dot.classList.add('active');
-        }
-        
+        //puts each dot inside of the dotContainer
         dotContainer.appendChild(dot);
         dots.push(dot);
     }
 
-    //This goes through the cards and hides all the ones that aren't at the current index
+    //This goes through the cards and hides all the ones that aren't at the current index and toggles the active class on the dots
     function showCard(currentIndex) {
         for (let i = 0; i < cards.length; i++) {
             if (i === currentIndex) {
@@ -251,10 +246,9 @@ function scrollCards(cardContainer, cardClass, prevBtn, nextBtn) {
         }
     }
 
-    //This shows the first card
     showCard(currentIndex);
 
-    //Adds event listeners to buttons
+    //adds functionality to the buttons
     function prevClick() {
         currentIndex = (currentIndex - 1 + cards.length) % cards.length;//% cards.length makes it wrap around -> eg. 3%3=0 (first card)
         showCard(currentIndex);
@@ -265,6 +259,7 @@ function scrollCards(cardContainer, cardClass, prevBtn, nextBtn) {
         showCard(currentIndex);
     }
 
+    //Adds event listeners to buttons
     prevButton.addEventListener('click', prevClick);
     nextButton.addEventListener('click', nextClick);
 }
