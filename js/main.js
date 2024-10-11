@@ -278,26 +278,81 @@ hamburgerMenu.addEventListener('click', toggleMenu);
 
 //GSAP
 
-// (()=> {
+(()=> {
 
-// gsap.registerPlugin(ScrollTrigger);   
+gsap.registerPlugin(ScrollTrigger);
 
-// gsap.utils.toArray(".project-card").forEach(card => {
+//gsap.utils is a collection of methods from GSAP
+//Takes a bunch of elements and turns them into an Array so we can mass apply a basic scrollTrigger animation
+gsap.utils.toArray(".section-headings, .section-subheadings, #student-grid div, .featured-work-card, #event-info-con *, #event-stats-con *, #project-exhibit ul, #project-heading h4, #client-con *, #testimonial-container, #course-info-con *, #developer-portfolios div, #event-video-con").forEach((item) => {
 
-// gsap.set(card, { opacity: 0, y: 50 });
+//Sets initial state
+gsap.set(item, { opacity: 0, y: 50 });
 
-// gsap.to(card, {
-//     scrollTrigger: {
-//       trigger: card,
-//       start: "top 80%",
-//       end: "bottom 20%", 
-//       toggleActions: "play none none reverse",
-//     },
-//     opacity: 1,
-//     y: 0,
-//     duration: 1,
-//     ease: "power1.out"
-//   });
-// });
+gsap.to(item, {
+    scrollTrigger: {
+    trigger: item, 
+    start: "top 90%", //Starts when top of card reaches % of viewport
+    end: "bottom 75%", //Ends when bottom of card reaches % of viewport
+    toggleActions: "play none none reverse", //Reverse is set so animation plays again if someone goes back to top and scrolls through again
+    scrub: true, //Links animation progress to scroll - making it smoother
+    },
+    opacity: 1, 
+    y: 0,  
+    duration: 1, 
+    ease: "power2.inOut",
+});
+});
 
-// })();
+//Staggered cards
+gsap.set("#finalists-wrapper .project-card", { opacity: 0, y: 50 });
+gsap.set("#honour-wrapper .project-card", { opacity: 0, y: 50 });
+gsap.set(".event-card", { opacity: 0, y: 50 });
+
+//Didn't use forEach loop cause I couldn't figure out how to use stagger with it
+gsap.to("#finalists-wrapper .project-card", {
+    scrollTrigger: {
+      trigger: "#finalists-wrapper .project-card",
+      start: "top 90%",
+      end: "bottom 75%",
+      toggleActions: "play none none reverse",
+      scrub: true,
+    },
+    opacity: 1,
+    y: 0,            
+    duration: .5,      
+    ease: "power3.out",
+    stagger: 0.1, //staggers each card           
+});
+
+gsap.to("#honour-wrapper .project-card", {
+    scrollTrigger: {
+      trigger: "#honour-wrapper .project-card",
+      start: "top 90%",
+      end: "bottom 75%",
+      toggleActions: "play none none reverse",
+      scrub: true,
+    },
+    opacity: 1,
+    y: 0,            
+    duration: .5,      
+    ease: "power3.out",
+    stagger: 0.1,            
+});
+
+gsap.to(".event-card", {
+    scrollTrigger: {
+    trigger: ".event-card",
+    start: "top 90%",
+    end: "bottom 75%",
+    toggleActions: "play none none reverse",
+    scrub: true,
+    },
+    opacity: 1,
+    y: 0,            
+    duration: .5,      
+    ease: "power3.out",
+    stagger: 0.1,            
+});
+
+})();

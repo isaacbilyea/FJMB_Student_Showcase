@@ -133,7 +133,7 @@ p {
     line-height: 1.2;
 }
 
-#mobile-break {
+.mobile-break {
     display: block;
 }
 
@@ -1146,6 +1146,10 @@ p {
     margin: 3.125rem 0;
 }
 
+.thankyou-heading p {
+    margin-top: 1rem;
+}
+
 #trophy-logo-stand {
     margin-top: 3.75rem;
     width: 85vw;
@@ -1238,7 +1242,7 @@ footer {
         font-size: 14px;
     }
 
-    #mobile-break {
+    .mobile-break {
         display: none;
     }
 
