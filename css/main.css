@@ -137,6 +137,10 @@ p {
     display: block;
 }
 
+.mobile-hide {
+    display: none;
+}
+
 #back-to-top {
     display: none;
 }
@@ -168,10 +172,10 @@ p {
 #banner {
     background-color: #B5262D;
     color: white;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 700;
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
     padding: 0 1.5625rem;
     align-items: center;
     position: sticky;
@@ -183,7 +187,7 @@ p {
     overflow: hidden;
 }
 
-#right-banner img, #right-banner p {
+#right-banner img {
     display: none;
 }
 
@@ -315,6 +319,7 @@ p {
 
 #hero-logo {
     width: 100%;
+    max-width: 25rem;
     opacity: 0.5;
     animation: rotateLogo 15s infinite linear;
 }
@@ -1246,6 +1251,10 @@ footer {
         display: none;
     }
 
+    .mobile-hide {
+        display: inline-block;
+    }
+
     .section-headings {
         font-size: 2.8125rem;
     }
@@ -1263,7 +1272,7 @@ footer {
 
     #banner {
         justify-content: space-between;
-        font-size: 1rem;
+        font-size: .9rem;
     }
 
     #right-banner p {
@@ -1280,6 +1289,7 @@ footer {
 
     #hero-logo {
         transform: scale(1.2);
+        max-width: 30rem;
     }
 
     #hero-title h3 {
@@ -1600,6 +1610,7 @@ footer {
 
     .featured-work-image img {
         height: 100%;
+        width: 100%;
     }
 
     .featured-work-content {
@@ -1776,6 +1787,10 @@ footer {
 
     /* 2. HEADER */
 
+    #banner {
+        font-size: 1rem;
+    }
+
     #hamburger-menu {
         display: none;
     }
@@ -1926,6 +1941,7 @@ footer {
 
     #hero-logo {
         transform: scale(1.1);
+        max-width: none;
     }
 
     /* 3b. Intro Video */

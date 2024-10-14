@@ -12,7 +12,6 @@ const player = new Plyr('video'),
       mobileMenu = document.querySelector('#mobile-menu'),
       hamburgerMenu = document.querySelector('#hamburger-menu');
 
-
 //Students
 const studentPortfolios = [
     { studentName: "Diego Rodriguez-Ramos", portfolioLink: "d.rodriguez-ramos.com" },
@@ -93,6 +92,7 @@ const devPortfolios = [
     { devName: "Bernardo Mac.", devLink: "bermac.com" }
 ];
 
+//Testimonials
 const testimonialCards = [
     {
         name: "David Patterson",
@@ -116,56 +116,80 @@ const testimonialCards = [
 
 //FUNCTIONS
 
+//Toggles classes to show/hide and activate
+function toggleMenu() {
+    hamburgerMenu.classList.toggle('activate');
+    mobileMenu.classList.toggle('show');
+};
+
+//This adds an event listener to all the menu items so the menu is toggled off when a menu item is clicked
+menuItems.forEach(item => {
+    const links = item.querySelector('a');
+    links.addEventListener('click', toggleMenu);
+});
+
 //This function formats the name to be first name and last initial
 function formatName(fullName) {
 
     //This splits the name into an array where each word is an element
     let splitName = fullName.split(' ');
 
+    //First word
     let firstName = splitName[0];
+
+    //Last Word
     let lastName = splitName[splitName.length - 1];
+
+    //First letter of last word
     let lastInitial = lastName[0];
     return `${firstName} ${lastInitial}.`;
 
 }
 
+//Loops through each student in the studentPortfolios array
 studentPortfolios.forEach(portfolio => {
 
+    //Creates elements for each student
     let studentCon = document.createElement('div');
     let studentLink = document.createElement('a');
 
+    //Applies link and formatted name to a tag
     studentLink.textContent = formatName(portfolio.studentName);
     studentLink.href = `https://${portfolio.portfolioLink}`;
 
+    //This makes it so when the name is clicked its open in a new window
     studentLink.target = "_blank";
 
+    //Appends link to div and div to existing HTML container
     studentCon.appendChild(studentLink);
-
     studentPortfolioCon.appendChild(studentCon);
 });
 
+//Loops through each student in the devPortfolios array
 devPortfolios.forEach(dev => {
 
+    //Creates elements for each developer
     let devCon = document.createElement('div');
     let devName = document.createElement('p');
     let devLink = document.createElement('a');
 
+    //Applies name to p tag
     devName.textContent = dev.devName;
     
+    //Applies link and link name to a tag
     devLink.textContent = dev.devLink;
     devLink.href = `https://${dev.devLink}`;
+
+    //This makes it so when the name is clicked its open in a new window
     devLink.target = "_blank";
 
+    //Appends name and link to div
     devCon.appendChild(devName);
     devCon.appendChild(devLink);
 
+    //Appends div to existing HTML container
     devPortfolioCon.appendChild(devCon);
 });
-
-function toggleMenu() {
-    hamburgerMenu.classList.toggle('activate');
-    mobileMenu.classList.toggle('show');
-};
 
 testimonialCards.forEach((testimonial, i) => {
 
@@ -191,7 +215,7 @@ testimonialCards.forEach((testimonial, i) => {
     text.classList.add('testimonial-text');
     image.classList.add('testimonial-image');
 
-    // Only display the first card (index 0)
+    //Only display one card at a time
     if (i !== currentIndex) {
         testimonialCon.style.display = 'none';
     }
@@ -199,17 +223,9 @@ testimonialCards.forEach((testimonial, i) => {
     //Puts all the created elements into the div created in this loop (each card)
     testimonialCon.append(image, name, job, text);
 
-    testimonialCon.setAttribute('data-index', i);
-
     //Appends the card to the already existing div inside the html acting as a wrapper
     testimonialWrapper.appendChild(testimonialCon);
 
-});
-
-//This adds an event listener to all the menu items so the menu is toggled off when a menu item is clicked
-menuItems.forEach(item => {
-    const links = item.querySelector('a');
-    links.addEventListener('click', toggleMenu);
 });
 
 //This function is for scrolling through multiple cards using arrows
@@ -224,11 +240,11 @@ function scrollCards(cardContainer, cardClass, prevBtn, nextBtn) {
     dots = []; //empty array
 
     for (let i = 0; i < cards.length; i++) {
-        //creates a dot for each card
+        //Creates a dot for each card
         const dot = document.createElement('span');
         dot.classList.add('dot');
 
-        //puts each dot inside of the dotContainer
+        //Puts each dot inside of the dotContainer
         dotContainer.appendChild(dot);
         dots.push(dot);
     }
@@ -246,9 +262,9 @@ function scrollCards(cardContainer, cardClass, prevBtn, nextBtn) {
         }
     }
 
-    showCard(currentIndex);
+    showCard(currentIndex); //Shows initial card
 
-    //adds functionality to the buttons
+    //Adds functionality to the buttons
     function prevClick() {
         currentIndex = (currentIndex - 1 + cards.length) % cards.length;//% cards.length makes it wrap around -> eg. 3%3=0 (first card)
         showCard(currentIndex);
@@ -270,11 +286,13 @@ scrollCards('#finalists-wrapper', '.project-card', '#finalists-prev-btn', '#fina
 scrollCards('#honour-wrapper', '.project-card', '#honour-prev-btn', '#honour-next-btn');
 scrollCards('#testimonial-container', '.testimonial-card', '#testimonial-prev-btn', '#testimonial-next-btn');
 
-// EVENT LISTENERS
+//EVENT LISTENERS
 
 hamburgerMenu.addEventListener('click', toggleMenu);
 
 })();
+
+
 
 //GSAP
 
